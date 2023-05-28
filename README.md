@@ -1,0 +1,3 @@
+# CSharpStarterKit
+
+Have Fun!
