@@ -1,4 +1,67 @@
 ﻿/*
+ Descriptions
+
+QueenAttack (皇后攻击):
+Description: This function addresses the Queen Attack problem. It determines whether two queens on a chessboard can 
+attack each other based on their positions.
+Input: The positions of the two queens.
+Output: It returns a message indicating whether the queens can attack each other or not.
+
+Anagram (字谜):
+Description: This function checks if two input strings are anagrams, meaning they contain the same characters in a different order.
+Input: Two strings.
+Output: It returns a boolean value indicating whether the input strings are anagrams or not.
+
+BeerSong (啤酒歌):
+Description: This function generates the lyrics of the classic "99 Bottles of Beer" song. It starts with a given number of 
+bottles and iteratively decrements until there are no more bottles.
+Input: The number of bottles to start with.
+Output: It returns the lyrics of the song.
+
+Binary (二进制):
+Description: This function converts a decimal number into its binary representation.
+Input: A decimal number.
+Output: It returns a string representing the binary equivalent of the input number.
+
+Luhn (Luhn算法):
+Description: This function implements the Luhn algorithm, which is used to validate identification numbers, 
+such as credit card numbers.
+Input: An identification number as a string.
+Output: It returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.
+
+NucleotideCount (核苷酸计数):
+Description: This function counts the occurrences of nucleotides (A, C, G, T) in a DNA strand.
+Input: A DNA strand as a string.
+Output: It returns a dictionary or an associative array with the counts of each nucleotide.
+
+PalindromeProducts (回文数乘积):
+Description: This function finds the largest and smallest palindrome numbers that can be obtained 
+as the product of two numbers within a given range.
+Input: A range of numbers.
+Output: It returns the largest and smallest palindrome numbers, along with the factors that produce them.
+
+Pascals Triangle (帕斯卡三角形):
+Description: 
+This function generates Pascal's Triangle up to a given number of rows.
+Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal. 
+It is constructed in such a way that each number in the triangle is the sum of the two numbers directly above it
+Input: The number of rows for the triangle.
+Output: It returns a two-dimensional array representing Pascal's Triangle.
+
+Triangle (三角形):
+Description: This function determines the type of triangle (equilateral, isosceles, scalene) based on the lengths of its sides.
+Input: The lengths of the triangle's three sides.
+Output: It returns a string indicating the type of triangle.
+
+Accumulate (累积):
+Description: This function performs a specified operation (sum, product, etc.) on a given list of numbers and returns the result.
+Input: A list of numbers and the operation to be performed.
+Output: It returns the accumulated result of the operation on the input numbers.
+
+*/
+
+
+/*
    Notes:
 
 1. Class: In C#, a class is a blueprint for creating objects that encapsulate data and functionality. 
@@ -82,7 +145,8 @@
     using access modifiers like `public` and `private`.
 
 20. Static Members: Static members belong to the class itself rather than instances of the class. 
-    The `Main` method in the given code is declared as static. It can be invoked without creating an instance of the `Program` class. Static members are shared among all instances of the class.
+    The `Main` method in the given code is declared as static. It can be invoked without creating an instance of the `Program` class. 
+    Static members are shared among all instances of the class.
 
 
 */
