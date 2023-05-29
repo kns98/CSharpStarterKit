@@ -782,8 +782,6 @@ public class Program
     }
 
     /*
-    Certainly! Let's go through each operator and explain the difference between the operator itself (e.g., `+`)
-    and its compound assignment form (e.g., `+=`):
 
     1. Addition (`+`):
        - Operator: `+`
