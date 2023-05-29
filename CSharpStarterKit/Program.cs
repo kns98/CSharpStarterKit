@@ -1,46 +1,49 @@
 /*
- Descriptions
 
-QueenAttack (皇后攻击):
+NB: Mei to write Chinese version
+
+Descriptions
+
+QueenAttack:
 Description: This function addresses the Queen Attack problem. It determines whether two queens on a chessboard can 
 attack each other based on their positions.
 Input: The positions of the two queens.
 Output: It returns a message indicating whether the queens can attack each other or not.
 
-Anagram (字谜):
+Anagram:
 Description: This function checks if two input strings are anagrams, meaning they contain the same characters in a different order.
 Input: Two strings.
 Output: It returns a boolean value indicating whether the input strings are anagrams or not.
 
-BeerSong (啤酒歌):
+Beer Song:
 Description: This function generates the lyrics of the classic "99 Bottles of Beer" song. It starts with a given number of 
 bottles and iteratively decrements until there are no more bottles.
 Input: The number of bottles to start with.
 Output: It returns the lyrics of the song.
 
-Binary (二进制):
+Binary:
 Description: This function converts a decimal number into its binary representation.
 Input: A decimal number.
 Output: It returns a string representing the binary equivalent of the input number.
 
-Luhn (Luhn算法):
+Luhn:
 Description: This function implements the Luhn algorithm, which is used to validate identification numbers, 
 such as credit card numbers.
 Input: An identification number as a string.
 Output: It returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.
 
-NucleotideCount (核苷酸计数):
+NucleotideCount:
 Description: This function counts the occurrences of nucleotides (A, C, G, T) in a DNA strand.
 Input: A DNA strand as a string.
 Output: It returns a dictionary or an associative array with the counts of each nucleotide.
 
-PalindromeProducts (回文数乘积):
+PalindromeProducts:
 Description: This function finds the largest and smallest palindrome numbers that can be obtained 
 as the product of two numbers within a given range.
 Input: A range of numbers.
 Output: It returns the largest and smallest palindrome numbers, along with the factors that produce them.
 
-Pascals Triangle (帕斯卡三角形):
+Pascals Triangle:
 Description: 
 This function generates Pascal's Triangle up to a given number of rows.
 Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal. 
@@ -48,16 +51,74 @@ It is constructed in such a way that each number in the triangle is the sum of t
 Input: The number of rows for the triangle.
 Output: It returns a two-dimensional array representing Pascal's Triangle.
 
-Triangle (三角形):
+Triangle:
 Description: This function determines the type of triangle (equilateral, isosceles, scalene) based on the lengths of its sides.
 Input: The lengths of the triangle's three sides.
 Output: It returns a string indicating the type of triangle.
 
-Accumulate (累积):
+Accumulate:
 Description: This function performs a specified operation (sum, product, etc.) on a given list of numbers and returns the result.
 Input: A list of numbers and the operation to be performed.
 Output: It returns the accumulated result of the operation on the input numbers.
 
+Clock:
+The Clock class represents a digital clock that can be used to track time. It provides functionalities to
+set the time.
+
+Hexadecimal:
+The Hexadecimal class is a utility class that enables conversion between decimal (base-10) and hexadecimal (base-16)
+representations of numbers. It provides methods to convert decimal numbers to hexadecimal format and vice versa.
+The "languageChoice" parameter allows the class to support different languages, ensuring that the conversion output
+is localized according to the specified language.
+
+LinkedList:
+The LinkedList class represents a linear data structure where elements are stored in a sequence and linked using pointers.
+It provides methods to insert, delete, and retrieve elements at various positions within the list. The "languageChoice"
+parameter allows the class to support different languages for error messages, prompts, or any other user-facing text,
+making it adaptable to different language preferences.
+
+Trinary:
+The Trinary class is designed to work with numbers represented in the trinary numeral system, also known as base-3.
+It offers functionalities to convert trinary numbers to decimal (base-10) and vice versa. Additionally,
+the class provides operations like addition, subtraction, and multiplication specifically tailored for trinary numbers.
+The "languageChoice" parameter allows the class to present information and outputs in the specified language.
+
+WordCount:
+The WordCount class is a utility class that allows you to count the occurrences of words in a given text or document.
+It provides methods to process the input text, tokenize it into individual words, and generate a count of each word
+encountered. The "languageChoice" parameter ensures that the class handles words and language-specific characters
+appropriately, accommodating different languages for accurate word counting.
+
+NthPrime:
+The NthPrime class is a mathematical utility class that computes the nth prime number. It offers methods
+to calculate and retrieve the prime number at a specific index. The "languageChoice" parameter enables the
+class to provide the prime number information in the desired language, making it accessible to users from
+different linguistic backgrounds.
+
+Wordy:
+The Wordy class is a linguistic tool that assists in analyzing and processing natural language sentences.
+It provides methods to parse sentences, identify parts of speech, extract meaningful information,
+and perform various linguistic operations. The "languageChoice" parameter allows the class to support
+different languages, enabling users to process sentences and obtain linguistically relevant results in
+their preferred language.
+
+AtbashCipher:
+The AtbashCipher class implements the Atbash cipher, a simple substitution cipher that replaces each letter in
+the alphabet with its mirror image from the opposite end. It provides methods to encrypt and decrypt text using
+the Atbash cipher algorithm. The "languageChoice" parameter allows the class to handle different languages,
+ensuring accurate substitution and maintaining the linguistic integrity of the text.
+
+BinarySearchTree:
+The BinarySearchTree class represents a binary search tree, a data structure consisting of nodes organized in
+a hierarchical manner. It offers methods to insert, delete, and search for elements within the tree efficiently.
+The "languageChoice" parameter allows the class to support different languages for error messages, prompts, or
+any other user-facing text, making it adaptable to different language preferences.
+
+Bob:
+The Bob class represents a conversational chatbot named Bob. It utilizes natural language processing techniques
+to understand and respond to user input in a conversational manner. The "languageChoice" parameter enables Bob
+to interact with users in the specified language, allowing for multi-lingual conversations and ensuring that
+Bob's responses are linguistically appropriate and localized.
 */
 
 
@@ -948,6 +1009,35 @@ public class Program
             return "Whatever.";
         }
     }
+
+    private static string BobResponse_Chinese(string phrase)
+    {
+        if (string.IsNullOrWhiteSpace(phrase))
+        {
+            return "好吧，随你的便！";
+        }
+
+        bool isQuestion = phrase.EndsWith("？");
+        bool isYelling = phrase.EndsWith("@");
+
+        if (isQuestion && isYelling)
+        {
+            return "冷静点，我知道我在做什么！";
+        }
+        else if (isQuestion)
+        {
+            return "当然。";
+        }
+        else if (isYelling)
+        {
+            return "哇，冷静！";
+        }
+        else
+        {
+            return "随你便吧。";
+        }
+    }
+
 }
 
 public class TreeNode
