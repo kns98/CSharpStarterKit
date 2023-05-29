@@ -1,4 +1,4 @@
-﻿/*
+/*
  Descriptions
 
 QueenAttack (皇后攻击):
@@ -59,6 +59,7 @@ Input: A list of numbers and the operation to be performed.
 Output: It returns the accumulated result of the operation on the input numbers.
 
 */
+
 
 
 /*
@@ -145,8 +146,7 @@ Output: It returns the accumulated result of the operation on the input numbers.
     using access modifiers like `public` and `private`.
 
 20. Static Members: Static members belong to the class itself rather than instances of the class. 
-    The `Main` method in the given code is declared as static. It can be invoked without creating an instance of the `Program` class. 
-    Static members are shared among all instances of the class.
+    The `Main` method in the given code is declared as static. It can be invoked without creating an instance of the `Program` class. Static members are shared among all instances of the class.
 
 
 */
@@ -190,190 +190,64 @@ public class Program
         Bob(languageChoice);
     }
 
-    private static string[] GetLanguageString(int languageChoice, string functionName)
-    {
-        if (functionName == "QueenAttack")
-        {
-            // English: Implementation for the Queen Attack problem
-            // Chinese: 皇后攻击问题的实现
-            return languageChoice == 1 ?
-                new string[] { "Enter the position of the first queen:", "Row: ", "Column: ", "Enter the position of the second queen:", "The queens can attack each other.", "The queens cannot attack each other." } :
-                new string[] { "输入第一个皇后的位置:", "行: ", "列: ", "输入第二个皇后的位置:", "皇后可以互相攻击.", "皇后无法互相攻击." };
-        }
 
-        if (functionName == "Anagram")
-        {
-            // English: Implementation for the Anagram problem
-            // Chinese: 字谜问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the first word: ", "Enter the second word: ", "The words are anagrams.", "The words are not anagrams." } :
-                new string[] { "输入第一个单词: ", "输入第二个单词: ", "这两个单词是字谜.", "这两个单词不是字谜." };
-        }
+    /*
 
-        if (functionName == "BeerSong")
-        {
-            // English: Implementation for the Beer Song problem
-            // Chinese: 啤酒歌问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { " bottles", " bottle", " of beer on the wall,", " of beer.", "Take one down and pass it around,", "No more bottles of beer on the wall, no more bottles of beer.", "Go to the store and buy some more,", " bottles of beer on the wall." } :
-                new string[] { " 瓶", " 瓶", " 的啤酒在墙上,", " 的啤酒.", "拿掉一瓶传来传去,", "没有啤酒在墙上, 没有啤酒.", "去商店买一些,", " 瓶的啤酒在墙上." };
+    Queens attacking diagonally
 
-        }
-
-        if (functionName == "Binary")
-        {
-            // English: Implementation for the Binary problem
-            // Chinese: 二进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a decimal number: ", "The binary representation is: " } :
-                new string[] { "输入一个十进制数: ", "二进制表示为: " };
-        }
-
-        if (functionName == "Luhn")
-        {
-            // English: Implementation for the Luhn problem
-            // Chinese: Luhn算法问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a credit card number: ", "The credit card number is valid.", "The credit card number is invalid." } :
-                new string[] { "输入一个信用卡号码: ", "信用卡号码有效.", "信用卡号码无效." };
-        }
-
-        if (functionName == "NucleotideCount")
-        {
-            // English: Implementation for the Nucleotide Count problem
-            // Chinese: 核苷酸计数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a DNA sequence: ", "A:", "C:", "G:", "T:" } :
-                new string[] { "输入一个DNA序列: ", "A:", "C:", "G:", "T:" };
-        }
-
-        if (functionName == "PalindromeProducts")
-        {
-            // English: Implementation for the Palindrome Products problem
-            // Chinese: 回文乘积问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the minimum value: ", "Enter the maximum value: ", "No palindrome products found.", "The largest palindrome product is: " } :
-                new string[] { "输入最小值: ", "输入最大值: ", "未找到回文乘积.", "最大回文乘积是: " };
-        }
-
-        if (functionName == "PascalsTriangle")
-        {
-            // English: Implementation for the Pascal's Triangle problem
-            // Chinese: 帕斯卡三角形问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the number of rows: " } :
-                new string[] { "输入行数: " };
-        }
-
-        if (functionName == "Triangle")
-        {
-            // English: Implementation for the Triangle problem
-            // Chinese: 三角形问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the number of rows: " } :
-                new string[] { "输入行数: " };
-        }
-
-        if (functionName == "Accumulate")
-        {
-            // English: Implementation for the Accumulate problem
-            // Chinese: 累积问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a series of numbers (separated by spaces): " } :
-                new string[] { "输入一系列数字（以空格分隔）: " };
-        }
-
-        if (functionName == "Clock")
-        {
-            // English: Implementation for the Clock problem
-            // Chinese: 时钟问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the hours: ", "Enter the minutes: ", "Invalid time." } :
-                new string[] { "输入小时: ", "输入分钟: ", "无效的时间." };
-        }
-
-        if (functionName == "Hexadecimal")
-        {
-            // English: Implementation for the Hexadecimal problem
-            // Chinese: 十六进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a decimal number: ", "The hexadecimal representation is: " } :
-                new string[] { "输入一个十进制数: ", "十六进制表示为: " };
-        }
-
-        if (functionName == "LinkedList")
-        {
-            // English: Implementation for the Linked List problem
-            // Chinese: 链表问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the elements of the linked list (separated by spaces): ", "The linked list: ", "The reversed linked list: " } :
-                new string[] { "输入链表元素（以空格分隔）: ", "链表: ", "反转后的链表: " };
-
-        }
-
-        if (functionName == "Trinary")
-        {
-            // English: Implementation for the Trinary problem
-            // Chinese: 三进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a trinary number: ", "The decimal representation is: " } :
-                new string[] { "输入一个三进制数: ", "十进制表示为: " };
-        }
-
-        if (functionName == "WordCount")
-        {
-            // English: Implementation for the Word Count problem
-            // Chinese: 单词计数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a sentence: ", "The word count is: " } :
-                new string[] { "输入一个句子: ", "单词数量为: " };
-        }
-
-        if (functionName == "NthPrime")
-        {
-            // English: Implementation for the Nth Prime problem
-            // Chinese: 第N个质数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the value of N: ", "The Nth prime number is: " } :
-                new string[] { "输入N的值: ", "第N个质数为: " };
-        }
-
-        if (functionName == "Wordy")
-        {
-            // English: Implementation for the Wordy problem
-            // Chinese: Wordy问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a word problem: ", "Invalid question.", "The answer is: " } :
-                new string[] { "输入一个单词问题: ", "无效的问题.", "答案是: " };
-        }
-
-        if (functionName == "AtbashCipher")
-        {
-            // English: Implementation for the Atbash Cipher problem
-            // Chinese: Atbash密码问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a message: ", "The encoded message is: " } :
-                new string[] { "输入一条消息: ", "编码后的消息为: " };
-        }
-
-        if (functionName == "BinarySearchTree")
-        {
-            // English: Implementation for the Binary Search Tree problem
-            // Chinese: 二叉搜索树问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the elements of the binary search tree (separated by spaces): ", "Enter the element to search: ", "The binary search tree is valid.", "The binary search tree is invalid." } :
-                new string[] { "输入二叉搜索树的元素（以空格分隔）: ", "输入要搜索的元素: ", "二叉搜索树有效.", "二叉搜索树无效." };
-
-        }
+        A   B   C   D   E   F   G   H  
+  +---+---+---+---+---+---+---+---+
+8 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+7 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+6 |   |   |   |   |   | X |   |   |
+  +---+---+---+---+---+---+---+---+
+5 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+4 |   |   |   | X |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+3 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+2 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+1 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
 
 
+    Queens not attacking
 
-        return new string[] { "" };
-    }
+        A   B   C   D   E   F   G   H  
+  +---+---+---+---+---+---+---+---+
+8 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+7 |   |   | X |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+6 |   |   |   |   |   | X |   |   |
+  +---+---+---+---+---+---+---+---+
+5 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+4 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+3 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+2 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+1 |   |   |   |   |   |   |   |   |
+  +---+---+---+---+---+---+---+---+
+
+ 
+     */
+
+
 
     public static void QueenAttack(int languageChoice)
     {
-        string[] languageStrings = GetLanguageString(languageChoice, "QueenAttack");
+        // English: Implementation for the Queen Attack problem
+        // Chinese: 皇后攻击问题的实现
+        string[] languageStrings = languageChoice == 1 ?
+            new string[] { "Enter the position of the first queen:", "Row: ", "Column: ", "Enter the position of the second queen:", "The queens can attack each other.", "The queens cannot attack each other." } :
+            new string[] { "输入第一个皇后的位置:", "行: ", "列: ", "输入第二个皇后的位置:", "皇后可以互相攻击.", "皇后无法互相攻击." };
 
         int[][] board = new int[8][];
         for (int i = 0; i < 8; i++)
