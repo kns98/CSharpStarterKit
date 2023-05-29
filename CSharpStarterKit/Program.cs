@@ -977,8 +977,15 @@ public class Program
 
         Console.Write(languageStrings[0]);
         string phrase = Console.ReadLine();
-
-        string response = BobResponse(phrase);
+        string response = "";
+        if (languageChoice == 1)
+        {
+            response = BobResponse(phrase);
+        }
+        else
+        {
+            response = BobResponse_Chinese(phrase);
+        }
         Console.WriteLine(languageStrings[1] + response);
     }
 
