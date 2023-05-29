@@ -781,6 +781,47 @@ public class Program
         return true;
     }
 
+    /*
+    Certainly! Let's go through each operator and explain the difference between the operator itself (e.g., `+`)
+    and its compound assignment form (e.g., `+=`):
+
+    1. Addition (`+`):
+       - Operator: `+`
+       - Description: The `+` operator is used for addition. It adds the value on the right-hand side to the value
+        on the left-hand side and returns the sum.
+       - Example: `result = result + int.Parse(words[i + 1])`
+
+    2. Subtraction (`-`):
+       - Operator: `-`
+       - Description: The `-` operator is used for subtraction. It subtracts the value on the right-hand side from
+        the value on the left-hand side and returns the difference.
+       - Example: `result = result - int.Parse(words[i + 1])`
+
+    3. Multiplication (`*`):
+       - Operator: `*`
+       - Description: The `*` operator is used for multiplication. It multiplies the value on the right-hand side
+        with the value on the left-hand side and returns the product.
+       - Example: `result = result * int.Parse(words[i + 2])`
+
+    4. Division (`/`):
+       - Operator: `/`
+       - Description: The `/` operator is used for division. It divides the value on the left-hand side by the
+        value on the right-hand side and returns the quotient.
+       - Example: `result = result / int.Parse(words[i + 2])`
+
+    5. Compound Assignment (`+=`, `-=`, `*=`, `/=`):
+       - Compound Assignment Operators: `+=`, `-=`, `*=`, `/=`
+       - Description: Compound assignment operators combine an arithmetic operation with assignment.
+        They perform the arithmetic operation on the variables on both sides of the operator and assign the result back to the variable on the left-hand side.
+       - Example: 
+         - `result += int.Parse(words[i + 1])` is equivalent to `result = result + int.Parse(words[i + 1])`.
+         - `result -= int.Parse(words[i + 1])` is equivalent to `result = result - int.Parse(words[i + 1])`.
+         - `result *= int.Parse(words[i + 2])` is equivalent to `result = result * int.Parse(words[i + 2])`.
+         - `result /= int.Parse(words[i + 2])` is equivalent to `result = result / int.Parse(words[i + 2])`.
+
+    The compound assignment operators provide a shorthand notation for performing an arithmetic operation and assigning the result back to the same variable, which can make the code more concise and readable.
+*/
+
     public static void Wordy(int languageChoice)
     {
         // English: Implementation for the Wordy problem
