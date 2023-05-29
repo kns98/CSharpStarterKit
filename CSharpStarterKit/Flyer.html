@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        #left {
+            position: absolute;
+            background-color: rgba(70, 29, 124, 0.8);
+            width: 20%;
+            height: 70em;
+            z-index: -1;
+        }
+
+        #top {
+            position: absolute;
+            background-color: #999999;
+            width: 100%;
+            height: 20%;
+            z-index: -1;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        #circle {
+            width: 35em;
+            height: 35em;
+            top: 25em;
+            left: 75em;
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(253, 208, 35, 0.3);
+            z-index: -3;
+        }
+
+        #logo {
+            display: none;
+        }
+
+        #bgImg {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 5em;
+            z-index: -4;
+        }
+
+        #bottom {
+            position: absolute;
+            background-color: #999999;
+            width: 100%;
+            height: 40%;
+            top: 46em;
+            z-index: -2;
+        }
+
+        .text {
+            display: block;
+            text-align: center;
+            font-family: 'Roboto';
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: 1em;
+            z-index: 1;
+            position: relative;
+        }
+
+        .text2 {
+            display: block;
+            text-align: center;
+            font-family: 'Roboto';
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .textInfo {
+            padding: 25px 25px 25px 25px;
+            display: block;
+            text-align: left;
+            font-family: 'Roboto';
+            font-size: 2em;
+            font-weight: bold;
+            position: absolute;
+        }
+
+        #qrCode {
+            display: none;
+        }
+
+        #csLogo {
+            display: none;
+        }
+
+        /* New CSS styles for SVG */
+
+        .svg-container {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .svg-container svg {
+                width: 4em;
+                height: 4em;
+            }
+    </style>
+</head>
+<body>
+    <div class="bg" id="right"></div>
+    <div class="bg" id="left"></div>
+    <div id="container">
+        <div id="top"></div>
+        <div id="circle"></div>
+        <span class="textInfo" style="color:#FDD023; top: 3em; left: 5em;">
+            QueenAttack (皇后攻击):
+            Description: This function addresses the Queen Attack problem. It determines whether two queens on a chessboard can
+            attack each other based on their positions.
+            Input: The positions of the two queens.
+            Output: It returns a message indicating whether the queens can attack each other or not.
+        </span>
+        <span class="textInfo" style="color:#9C1C8F; top: 8em; left: 30em;">
+            Anagram (字谜):
+            Description: This function checks if two input strings are anagrams, meaning they contain the same characters in a different order.
+            Input: Two strings.
+            Output: It returns a boolean value indicating whether the input strings are anagrams or not.
+        </span>
+        <span class="textInfo" style="color:#158467; top: 17em; left: 14em;">
+            BeerSong (啤酒歌):
+            Description: This function generates the lyrics of the classic "99 Bottles of Beer" song. It starts with a given number of
+            bottles and iteratively decrements until there are no more bottles.
+            Input: The number of bottles to start with.
+            Output: It returns the lyrics of the song.
+        </span>
+        <span class="textInfo" style="color:#1E54A9; top: 25em; left: 45em;">
+            Binary (二进制):
+            Description: This function converts a decimal number into its binary representation.
+            Input: A decimal number.
+            Output: It returns a string representing the binary equivalent of the input number.
+        </span>
+        <span class="textInfo" style="color:#E0115F; top: 33em; left: 30em;">
+            Luhn (Luhn算法):
+            Description: This function implements the Luhn algorithm, which is used to validate identification numbers,
+            such as credit card numbers.
+            Input: An identification number as a string.
+            Output: It returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.
+        </span>
+        <span class="textInfo" style="color:#7E3D12; top: 42em; left: 5em;">
+            NucleotideCount (核苷酸计数):
+            Description: This function counts the occurrences of nucleotides (A, C, G, T) in a DNA strand.
+            Input: A DNA strand as a string.
+            Output: It returns a dictionary or an associative array with the counts of each nucleotide.
+        </span>
+        <span class="textInfo" style="color:#A4173E; top: 50em; left: 30em;">
+            PalindromeProducts (回文数乘积):
+            Description: This function finds the largest and smallest palindrome numbers that can be obtained
+            as the product of two numbers within a given range.
+            Input: A range of numbers.
+            Output: It returns the largest and smallest palindrome numbers, along with the factors that produce them.
+        </span>
+        <span class="textInfo" style="color:#1B5EAC; top: 59em; left: 14em;">
+            Pascal's Triangle (帕斯卡三角形):
+            Description:
+            This function generates Pascal's Triangle up to a given number of rows.
+            Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal.
+            It is constructed in such a way that each number in the triangle is the sum of the two numbers directly above it.
+            Input: The number of rows for the triangle.
+            Output: It returns a two-dimensional array representing Pascal's Triangle.
+        </span>
+        <span class="textInfo" style="color:#E8680C; top: 68em; left: 45em;">
+            Triangle (三角形):
+            Description: This function determines the type of triangle (equilateral, isosceles, scalene) based on the lengths of its sides.
+            Input: The lengths of the three sides of the triangle.
+            Output: It returns a message indicating the type of triangle.
+        </span>
+        <svg class="svg-container" style="top: 10em; left: 20em;">
+            <!-- SVG code representing kids learning CS -->
+            <circle cx="50" cy="50" r="40" fill="#FFC107" />
+            <text x="50" y="55" fill="white" font-size="30px" text-anchor="middle">CS</text>
+        </svg>
+        <svg class="svg-container" style="top: 30em; left: 60em;">
+            <!-- SVG code representing kids learning CS -->
+            <rect x="40" y="20" width="80" height="60" fill="#3F51B5" />
+            <text x="80" y="55" fill="white" font-size="30px" text-anchor="middle">CS</text>
+        </svg>
+        <svg class="svg-container" style="top: 50em; left: 35em;">
+            <!-- SVG code representing kids learning CS -->
+            <polygon points="20,50 50,20 80,50" fill="#F44336" />
+            <text x="50" y="55" fill="white" font-size="30px" text-anchor="middle">CS</text>
+        </svg>
+    </div>
+    <div id="bottom"></div>
+    <span class="text2" style="color: white; top: 55em; left: 50%;">Let's Learn CS!</span>
+</body>
+</html>
