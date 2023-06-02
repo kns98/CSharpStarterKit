@@ -2,127 +2,6 @@
 
 NB: Mei to write Chinese version
 
-Descriptions
-
-QueenAttack:
-Description: This function addresses the Queen Attack problem. It determines whether two queens on a chessboard can 
-attack each other based on their positions.
-Input: The positions of the two queens.
-Output: It returns a message indicating whether the queens can attack each other or not.
-
-Anagram:
-Description: This function checks if two input strings are anagrams, meaning they contain the same characters in a different order.
-Input: Two strings.
-Output: It returns a boolean value indicating whether the input strings are anagrams or not.
-
-Beer Song:
-Description: This function generates the lyrics of the classic "99 Bottles of Beer" song. It starts with a given number of 
-bottles and iteratively decrements until there are no more bottles.
-Input: The number of bottles to start with.
-Output: It returns the lyrics of the song.
-
-Binary:
-Description: This function converts a decimal number into its binary representation.
-Input: A decimal number.
-Output: It returns a string representing the binary equivalent of the input number.
-
-Luhn:
-Description: This function implements the Luhn algorithm, which is used to validate identification numbers, 
-such as credit card numbers.
-Input: An identification number as a string.
-Output: It returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.
-
-NucleotideCount:
-Description: This function counts the occurrences of nucleotides (A, C, G, T) in a DNA strand.
-Input: A DNA strand as a string.
-Output: It returns a dictionary or an associative array with the counts of each nucleotide.
-
-PalindromeProducts:
-Description: This function finds the largest and smallest palindrome numbers that can be obtained 
-as the product of two numbers within a given range.
-Input: A range of numbers.
-Output: It returns the largest and smallest palindrome numbers, along with the factors that produce them.
-
-Pascals Triangle:
-Description: 
-This function generates Pascal's Triangle up to a given number of rows.
-Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal. 
-It is constructed in such a way that each number in the triangle is the sum of the two numbers directly above it
-Input: The number of rows for the triangle.
-Output: It returns a two-dimensional array representing Pascal's Triangle.
-
-Triangle:
-Description: This function determines the type of triangle (equilateral, isosceles, scalene) based on the lengths of its sides.
-Input: The lengths of the triangle's three sides.
-Output: It returns a string indicating the type of triangle.
-
-Accumulate:
-Description: This function performs a specified operation (sum, product, etc.) on a given list of numbers and returns the result.
-Input: A list of numbers and the operation to be performed.
-Output: It returns the accumulated result of the operation on the input numbers.
-
-Clock:
-The Clock class represents a digital clock that can be used to track time. It provides functionalities to
-set the time.
-
-Hexadecimal:
-The Hexadecimal class is a utility class that enables conversion between decimal (base-10) and hexadecimal (base-16)
-representations of numbers. It provides methods to convert decimal numbers to hexadecimal format and vice versa.
-The "languageChoice" parameter allows the class to support different languages, ensuring that the conversion output
-is localized according to the specified language.
-
-LinkedList:
-The LinkedList class represents a linear data structure where elements are stored in a sequence and linked using pointers.
-It provides methods to insert, delete, and retrieve elements at various positions within the list. The "languageChoice"
-parameter allows the class to support different languages for error messages, prompts, or any other user-facing text,
-making it adaptable to different language preferences.
-
-Trinary:
-The Trinary class is designed to work with numbers represented in the trinary numeral system, also known as base-3.
-It offers functionalities to convert trinary numbers to decimal (base-10) and vice versa. Additionally,
-the class provides operations like addition, subtraction, and multiplication specifically tailored for trinary numbers.
-The "languageChoice" parameter allows the class to present information and outputs in the specified language.
-
-WordCount:
-The WordCount class is a utility class that allows you to count the occurrences of words in a given text or document.
-It provides methods to process the input text, tokenize it into individual words, and generate a count of each word
-encountered. The "languageChoice" parameter ensures that the class handles words and language-specific characters
-appropriately, accommodating different languages for accurate word counting.
-
-NthPrime:
-The NthPrime class is a mathematical utility class that computes the nth prime number. It offers methods
-to calculate and retrieve the prime number at a specific index. The "languageChoice" parameter enables the
-class to provide the prime number information in the desired language, making it accessible to users from
-different linguistic backgrounds.
-
-Wordy:
-The Wordy class is a linguistic tool that assists in analyzing and processing natural language sentences.
-It provides methods to parse sentences, identify parts of speech, extract meaningful information,
-and perform various linguistic operations. The "languageChoice" parameter allows the class to support
-different languages, enabling users to process sentences and obtain linguistically relevant results in
-their preferred language.
-
-AtbashCipher:
-The AtbashCipher class implements the Atbash cipher, a simple substitution cipher that replaces each letter in
-the alphabet with its mirror image from the opposite end. It provides methods to encrypt and decrypt text using
-the Atbash cipher algorithm. The "languageChoice" parameter allows the class to handle different languages,
-ensuring accurate substitution and maintaining the linguistic integrity of the text.
-
-BinarySearchTree:
-The BinarySearchTree class represents a binary search tree, a data structure consisting of nodes organized in
-a hierarchical manner. It offers methods to insert, delete, and search for elements within the tree efficiently.
-The "languageChoice" parameter allows the class to support different languages for error messages, prompts, or
-any other user-facing text, making it adaptable to different language preferences.
-
-Bob:
-The Bob class represents a conversational chatbot named Bob. It utilizes natural language processing techniques
-to understand and respond to user input in a conversational manner. The "languageChoice" parameter enables Bob
-to interact with users in the specified language, allowing for multi-lingual conversations and ensuring that
-Bob's responses are linguistically appropriate and localized.
-*/
-
-
-
 /*
    Notes:
 
@@ -220,35 +99,211 @@ using System.Text;
 
 public class Program
 {
+    static int languageChoice = 0;
+
     public static void Main(string[] args)
     {
         Console.WriteLine("Choose a language:");
         Console.WriteLine("1. English");
         Console.WriteLine("2. Chinese");
-        int languageChoice = int.Parse(Console.ReadLine());
+        languageChoice = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Choose a game:");
+        Console.WriteLine("1. Accumulate");
+        Console.WriteLine("2. Anagram");
+        Console.WriteLine("3. Atbash Cipher");
+        Console.WriteLine("4. Beer Song");
+        Console.WriteLine("5. Binary");
+        Console.WriteLine("6. Binary Search Tree");
+        Console.WriteLine("7. Bob");
+        Console.WriteLine("8. Clock");
+        Console.WriteLine("9. Hexadecimal");
+        Console.WriteLine("10. Linked List");
+        Console.WriteLine("11. Luhn");
+        Console.WriteLine("12. Nth Prime");
+        Console.WriteLine("13. Nucleotide Count");
+        Console.WriteLine("14. Palindrome Products");
+        Console.WriteLine("15. Pascal's Triangle");
+        Console.WriteLine("16. Queen Attack");
+        Console.WriteLine("17. Trinary");
+        Console.WriteLine("18. Triangle");
+        Console.WriteLine("19. Word Count");
+        Console.WriteLine("20. Wordy");
 
-        QueenAttack(languageChoice);
-        Anagram(languageChoice);
-        BeerSong(languageChoice);
-        Binary(languageChoice);
-        Luhn(languageChoice);
-        NucleotideCount(languageChoice);
-        PalindromeProducts(languageChoice);
-        PascalsTriangle(languageChoice);
-        Triangle(languageChoice);
-        Accumulate(languageChoice);
-        Clock(languageChoice);
-        Hexadecimal(languageChoice);
-        LinkedList(languageChoice);
-        Trinary(languageChoice);
-        WordCount(languageChoice);
-        NthPrime(languageChoice);
-        Wordy(languageChoice);
-        AtbashCipher(languageChoice);
-        BinarySearchTree(languageChoice);
-        Bob(languageChoice);
+        int gameChoice = int.Parse(Console.ReadLine());
+
+        switch (gameChoice)
+        {
+            case 1:
+                Console.WriteLine("Accumulate");
+                Console.WriteLine("What is Accumulate?");
+                Console.WriteLine("Description: Performs a specified operation (sum, product, etc.) on a given list of numbers and returns the result.");
+                Console.WriteLine("Input: A list of numbers and the operation to be performed.");
+                Console.WriteLine("Output: Returns the accumulated result of the operation on the input numbers.");
+                Accumulate();
+                break;
+            case 2:
+                Console.WriteLine("Anagram");
+                Console.WriteLine("What is Anagram?");
+                Console.WriteLine("Description: Checks if two input strings are anagrams (contain the same characters in a different order).");
+                Console.WriteLine("Input: Two strings.");
+                Console.WriteLine("Output: Returns a boolean value indicating whether the input strings are anagrams or not.");
+                Anagram();
+                break;
+            case 3:
+                Console.WriteLine("Atbash Cipher");
+                Console.WriteLine("What is Atbash Cipher?");
+                Console.WriteLine("Description: Implements the Atbash cipher, a simple substitution cipher.");
+                Console.WriteLine("Usage: The AtbashCipher class provides methods to encrypt and decrypt text using the Atbash cipher algorithm.");
+                AtbashCipher();
+                break;
+            case 4:
+                Console.WriteLine("Beer Song");
+                Console.WriteLine("What is Beer Song?");
+                Console.WriteLine("Description: Generates the lyrics of the classic '99 Bottles of Beer' song.");
+                Console.WriteLine("Input: The number of bottles to start with.");
+                Console.WriteLine("Output: Returns the lyrics of the song.");
+                BeerSong();
+                break;
+            case 5:
+                Console.WriteLine("Binary");
+                Console.WriteLine("What is Binary?");
+                Console.WriteLine("Description: Converts a decimal number into its binary representation.");
+                Console.WriteLine("Input: A decimal number.");
+                Console.WriteLine("Output: Returns a string representing the binary equivalent of the input number.");
+                Binary();
+                break;
+            case 6:
+                Console.WriteLine("Binary Search Tree");
+                Console.WriteLine("What is Binary Search Tree?");
+                Console.WriteLine("Description: Represents a binary search tree, a hierarchical data structure.");
+                Console.WriteLine("Usage: The BinarySearchTree class offers methods to insert, delete, and search for elements within the tree.");
+                BinarySearchTree();
+                break;
+            case 7:
+                Console.WriteLine("Bob");
+                Console.WriteLine("What is Bob?");
+                Console.WriteLine("Description: A conversational chatbot that responds to user input.");
+                Console.WriteLine("Usage: The Bob class utilizes natural language processing techniques to understand and interact with users.");
+                Bob();
+                break;
+            case 8:
+                Console.WriteLine("Clock");
+                Console.WriteLine("What is Clock?");
+                Console.WriteLine("Description: Represents a digital clock that can be used to track time.");
+                Console.WriteLine("Usage: The Clock class provides functionalities to set the time.");
+                Clock();
+                break;
+            case 9:
+                Console.WriteLine("Hexadecimal");
+                Console.WriteLine("What is Hexadecimal?");
+                Console.WriteLine("Description: Utility class for converting between decimal and hexadecimal representations of numbers.");
+                Console.WriteLine("Usage: Provides methods to convert decimal numbers to hexadecimal format and vice versa.");
+                Hexadecimal();
+                break;
+            case 10:
+                Console.WriteLine("Linked List");
+                Console.WriteLine("What is Linked List?");
+                Console.WriteLine("Description: Represents a linear data structure where elements are stored in a sequence and linked using pointers.");
+                Console.WriteLine("Usage: The LinkedList class provides methods to insert, delete, and retrieve elements within the list.");
+                LinkedList();
+                break;
+            case 11:
+                Console.WriteLine("Luhn");
+                Console.WriteLine("What is Luhn?");
+                Console.WriteLine("Description: Implements the Luhn algorithm for validating identification numbers.");
+                Console.WriteLine("Input: An identification number as a string.");
+                Console.WriteLine("Output: Returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.");
+                Luhn();
+                break;
+            case 12:
+                Console.WriteLine("Nth Prime");
+                Console.WriteLine("What is Nth Prime?");
+                Console.WriteLine("Description: Mathematical utility class that computes the nth prime number.");
+                Console.WriteLine("Usage: Provides methods to calculate and retrieve the prime number at a specific index.");
+                NthPrime();
+                break;
+            case 13:
+                Console.WriteLine("Nucleotide Count");
+                Console.WriteLine("What is Nucleotide Count?");
+                Console.WriteLine("Description: Counts the occurrences of nucleotides (A, C, G, T) in a DNA strand.");
+                Console.WriteLine("Input: A DNA strand as a string.");
+                Console.WriteLine("Output: Returns a dictionary or an associative array with the counts of each nucleotide.");
+                NucleotideCount();
+                break;
+            case 14:
+                Console.WriteLine("Palindrome Products");
+                Console.WriteLine("What is Palindrome Products?");
+                Console.WriteLine("Description: Finds the largest and smallest palindrome numbers that can be obtained as the product of two numbers within a given range.");
+                Console.WriteLine("Input: A range of numbers.");
+                Console.WriteLine("Output: Returns the largest and smallest palindrome numbers, along with the factors that produce them.");
+                PalindromeProducts();
+                break;
+            case 15:
+                Console.WriteLine("Pascal's Triangle");
+                Console.WriteLine("What is Pascal's Triangle?");
+                Console.WriteLine("Description: Generates Pascal's Triangle up to a given number of rows.");
+                Console.WriteLine("Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal. Each number in the triangle is the sum of the two numbers directly above it.");
+                Console.WriteLine("Input: The number of rows for the triangle.");
+                Console.WriteLine("Output: Returns a two-dimensional array representing Pascal's Triangle.");
+                PascalsTriangle();
+                break;
+            case 16:
+                Console.WriteLine("Queen Attack");
+                Console.WriteLine("What is Queen Attack?");
+                Console.WriteLine("Description: Determines whether two queens on a chessboard can attack each other based on their positions.");
+                Console.WriteLine("Input: The positions of the two queens.");
+                Console.WriteLine("Output: Returns a message indicating whether the queens can attack each other or not.");
+                QueenAttack();
+                break;
+            case 17:
+                Console.WriteLine("Trinary");
+                Console.WriteLine("What is Trinary?");
+                Console.WriteLine("Description: Utility class for working with numbers represented in the trinary numeral system (base-3).");
+                Console.WriteLine("Usage: Provides functionalities to convert trinary numbers to decimal and vice versa, and perform operations on trinary numbers.");
+                Trinary();
+                break;
+            case 18:
+                Console.WriteLine("Triangle");
+                Console.WriteLine("What is Triangle?");
+                Console.WriteLine("Description: Determines the type of triangle (equilateral, isosceles, scalene) based on the lengths of its sides.");
+                Console.WriteLine("Input: The lengths of the triangle's three sides.");
+                Console.WriteLine("Output: Returns a string indicating the type of triangle.");
+                Triangle();
+                break;
+            case 19:
+                Console.WriteLine("Word Count");
+                Console.WriteLine("What is Word Count?");
+                Console.WriteLine("Description: Utility class for counting the occurrences of words in a given text or document.");
+                Console.WriteLine("Usage: Provides methods to process the input text, tokenize it into individual words, and generate a count of each word encountered.");
+                WordCount();
+                break;
+            case 20:
+                Console.WriteLine("Wordy");
+                Console.WriteLine("What is Wordy?");
+                Console.WriteLine("Description: Linguistic tool for analyzing and processing natural language sentences.");
+                Console.WriteLine("Usage: Provides methods to parse sentences, identify parts of speech, extract meaningful information, and perform linguistic operations.");
+                Wordy();
+                break;
+            default:
+                Console.WriteLine("Invalid choice");
+                break;
+        }
+    }
+
+    private static void Wordy()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void BinarySearchTree()
+    {
+        throw new NotImplementedException();
+    }
+
+    private static void AtbashCipher()
+    {
+        throw new NotImplementedException();
     }
 
 
@@ -302,7 +357,7 @@ public class Program
 
 
 
-    public static void QueenAttack(int languageChoice)
+    public static void QueenAttack()
     {
         // English: Implementation for the Queen Attack problem
         // Chinese: 皇后攻击问题的实现
@@ -339,7 +394,7 @@ public class Program
         }
     }
 
-    public static void Anagram(int languageChoice)
+    public static void Anagram()
     {
         // English: Implementation for the Anagram problem
         // Chinese: 字谜问题的实现
@@ -371,7 +426,7 @@ public class Program
         }
     }
 
-    public static void BeerSong(int languageChoice)
+    public static void BeerSong()
     {
         // English: Implementation for the Beer Song problem
         // Chinese: 啤酒歌问题的实现
@@ -391,7 +446,7 @@ public class Program
         Console.WriteLine($"99{languageStrings[0]}{languageStrings[7]}\n");
     }
 
-    public static void Binary(int languageChoice)
+    public static void Binary()
     {
         // English: Implementation for the Binary problem
         // Chinese: 二进制问题的实现
@@ -406,7 +461,7 @@ public class Program
         Console.WriteLine(languageStrings[1] + binaryString);
     }
 
-    public static void Luhn(int languageChoice)
+    public static void Luhn()
     {
         // English: Implementation for the Luhn problem
         // Chinese: Luhn算法问题的实现
@@ -448,7 +503,7 @@ public class Program
         }
     }
 
-    public static void NucleotideCount(int languageChoice)
+    public static void NucleotideCount()
     {
         // English: Implementation for the Nucleotide Count problem
         // Chinese: 核苷酸计数问题的实现
@@ -481,7 +536,7 @@ public class Program
         Console.WriteLine(languageStrings[4] + nucleotideCount['T']);
     }
 
-    public static void PalindromeProducts(int languageChoice)
+    public static void PalindromeProducts()
     {
         // English: Implementation for the Palindrome Products problem
         // Chinese: 回文乘积问题的实现
@@ -531,7 +586,7 @@ public class Program
         }
     }
 
-    public static void PascalsTriangle(int languageChoice)
+    public static void PascalsTriangle()
     {
         // English: Implementation for the Pascal's Triangle problem
         // Chinese: 帕斯卡三角形问题的实现
@@ -572,7 +627,7 @@ public class Program
         }
     }
 
-    public static void Triangle(int languageChoice)
+    public static void Triangle()
     {
         // English: Implementation for the Triangle problem
         // Chinese: 三角形问题的实现
@@ -590,7 +645,7 @@ public class Program
         }
     }
 
-    public static void Accumulate(int languageChoice)
+    public static void Accumulate()
     {
         // English: Implementation for the Accumulate problem
         // Chinese: 累积问题的实现
@@ -614,7 +669,7 @@ public class Program
         Console.WriteLine("Accumulated Result: " + string.Join(" ", accumulated));
     }
 
-    public static void Clock(int languageChoice)
+    public static void Clock()
     {
         // English: Implementation for the Clock problem
         // Chinese: 时钟问题的实现
@@ -642,7 +697,7 @@ public class Program
         }
     }
 
-    public static void Hexadecimal(int languageChoice)
+    public static void Hexadecimal()
     {
         // English: Implementation for the Hexadecimal problem
         // Chinese: 十六进制问题的实现
@@ -657,7 +712,7 @@ public class Program
         Console.WriteLine(languageStrings[1] + hexadecimalString);
     }
 
-    public static void LinkedList(int languageChoice)
+    public static void LinkedList()
     {
         // English: Implementation for the Linked List problem
         // Chinese: 链表问题的实现
@@ -688,7 +743,7 @@ public class Program
         Console.WriteLine();
     }
 
-    public static void Trinary(int languageChoice)
+    public static void Trinary()
     {
         // English: Implementation for the Trinary problem
         // Chinese: 三进制问题的实现
@@ -719,7 +774,7 @@ public class Program
         Console.WriteLine(languageStrings[1] + decimalNumber);
     }
 
-    public static void WordCount(int languageChoice)
+    public static void WordCount()
     {
         // English: Implementation for the Word Count problem
         // Chinese: 单词计数问题的实现
@@ -736,7 +791,7 @@ public class Program
         Console.WriteLine(languageStrings[1] + wordCount);
     }
 
-    public static void NthPrime(int languageChoice)
+    public static void NthPrime()
     {
         // English: Implementation for the Nth Prime problem
         // Chinese: 第N个质数问题的实现
@@ -1006,7 +1061,7 @@ public class Program
         return SearchBinarySearchTree(node.Right, value);
     }
 
-    public static void Bob(int languageChoice)
+    public static void Bob()
     {
         // English: Implementation for the Bob problem
         // Chinese: Bob问题的实现
