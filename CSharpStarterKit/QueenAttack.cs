@@ -68,39 +68,39 @@ namespace CSharpLearn
     internal static class QueenAttackMod
     {
 
-    public static void QueenAttack(Language languageChoice)
-    {
-        string[] languageStrings = languageChoice == Language.English ?
-            new string[] { "Enter the position of the first queen:", "Row: ", "Column: ", "Enter the position of the second queen:", "The queens can attack each other.", "The queens cannot attack each other." } :
-            new string[] { "输入第一个皇后的位置:", "行: ", "列: ", "输入第二个皇后的位置:", "皇后可以互相攻击.", "皇后无法互相攻击." };
-
-        int[][] board = new int[8][];
-        for (int i = 0; i < 8; i++)
+        public static void QueenAttack(Language languageChoice)
         {
-            board[i] = new int[8];
-        }
-        int queen1Row, queen1Col, queen2Row, queen2Col;
+            string[] languageStrings = languageChoice == Language.English ?
+                new string[] { "Enter the position of the first queen:", "Row: ", "Column: ", "Enter the position of the second queen:", "The queens can attack each other.", "The queens cannot attack each other." } :
+                new string[] { "输入第一个皇后的位置:", "行: ", "列: ", "输入第二个皇后的位置:", "皇后可以互相攻击.", "皇后无法互相攻击." };
 
-        Console.WriteLine(languageStrings[0]);
-        Console.Write(languageStrings[1]);
-        queen1Row = int.Parse(Console.ReadLine());
-        Console.Write(languageStrings[2]);
-        queen1Col = int.Parse(Console.ReadLine());
+            int[][] board = new int[8][];
+            for (int i = 0; i < 8; i++)
+            {
+                board[i] = new int[8];
+            }
+            int queen1Row, queen1Col, queen2Row, queen2Col;
 
-        Console.WriteLine(languageStrings[3]);
-        Console.Write(languageStrings[1]);
-        queen2Row = int.Parse(Console.ReadLine());
-        Console.Write(languageStrings[2]);
-        queen2Col = int.Parse(Console.ReadLine());
+            Console.WriteLine(languageStrings[0]);
+            Console.Write(languageStrings[1]);
+            queen1Row = int.Parse(Console.ReadLine());
+            Console.Write(languageStrings[2]);
+            queen1Col = int.Parse(Console.ReadLine());
 
-        if (queen1Row == queen2Row || queen1Col == queen2Col || Math.Abs(queen1Row - queen2Row) == Math.Abs(queen1Col - queen2Col))
-        {
-            Console.WriteLine(languageStrings[4]);
-        }
-        else
-        {
-            Console.WriteLine(languageStrings[5]);
+            Console.WriteLine(languageStrings[3]);
+            Console.Write(languageStrings[1]);
+            queen2Row = int.Parse(Console.ReadLine());
+            Console.Write(languageStrings[2]);
+            queen2Col = int.Parse(Console.ReadLine());
+
+            if (queen1Row == queen2Row || queen1Col == queen2Col || Math.Abs(queen1Row - queen2Row) == Math.Abs(queen1Col - queen2Col))
+            {
+                Console.WriteLine(languageStrings[4]);
+            }
+            else
+            {
+                Console.WriteLine(languageStrings[5]);
+            }
         }
     }
-}
 }
