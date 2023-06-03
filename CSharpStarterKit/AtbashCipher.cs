@@ -1,4 +1,6 @@
-﻿using System;
+﻿//see: https://en.wikipedia.org/wiki/Atbash
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
