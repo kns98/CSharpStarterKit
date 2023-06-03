@@ -92,7 +92,7 @@ NB: Mei to write Chinese version
 */
 
 
-using CSharpStarterKit;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
