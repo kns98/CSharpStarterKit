@@ -106,16 +106,14 @@ namespace CSharpLearn
 
         public static void Main(string[] args)
         {
-            int languageChoice;
             bool continuePlaying = true;
+            Console.WriteLine("Choose a language:");
+            Console.WriteLine("1. English");
+            Console.WriteLine("2. Chinese");
+            Language languageChoice = (Language)int.Parse(Console.ReadLine());
 
             while (continuePlaying)
             {
-                Console.WriteLine("Choose a language:");
-                Console.WriteLine("1. English");
-                Console.WriteLine("2. Chinese");
-                languageChoice = int.Parse(Console.ReadLine());
-
                 Console.WriteLine("Choose a game:");
                 Console.WriteLine("1. Accumulate");
                 Console.WriteLine("2. Anagram");
@@ -139,7 +137,7 @@ namespace CSharpLearn
                 Console.WriteLine("20. Wordy");
 
                 int gameChoice = int.Parse(Console.ReadLine());
-                ChooseGame(gameChoice);
+                ChooseGame(gameChoice, languageChoice);
 
                 Console.WriteLine("Do you want to continue playing? (y/n)");
                 string continueChoice = Console.ReadLine();
@@ -148,7 +146,7 @@ namespace CSharpLearn
             }
         }
 
-        private static void ChooseGame(int gameChoice)
+        private static void ChooseGame(int gameChoice, Language languageChoice)
         {
             switch (gameChoice)
             {
@@ -196,7 +194,7 @@ namespace CSharpLearn
                     Console.WriteLine("What is Binary Search Tree?");
                     Console.WriteLine("Description: Represents a binary search tree, a hierarchical data structure.");
                     Console.WriteLine("Usage: The BinarySearchTree class offers methods to insert, delete, and search for elements within the tree.");
-                    BinarySearchTree();
+                    BinarySearchTree(languageChoice);
                     break;
                 case 7:
                     Console.WriteLine("Bob");
@@ -272,7 +270,7 @@ namespace CSharpLearn
                     Console.WriteLine("Description: Determines whether two queens on a chessboard can attack each other based on their positions.");
                     Console.WriteLine("Input: The positions of the two queens.");
                     Console.WriteLine("Output: Returns a message indicating whether the queens can attack each other or not.");
-                    QueenAttack();
+                    QueenAttackMod.QueenAttack(languageChoice);
                     break;
                 case 17:
                     Console.WriteLine("Trinary");
@@ -314,7 +312,7 @@ namespace CSharpLearn
             throw new NotImplementedException();
         }
 
-        private static void BinarySearchTree()
+        private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
         }
@@ -322,94 +320,6 @@ namespace CSharpLearn
         private static void AtbashCipher()
         {
             throw new NotImplementedException();
-        }
-
-
-        /*
-
-        Queens attacking diagonally
-
-            A   B   C   D   E   F   G   H  
-      +---+---+---+---+---+---+---+---+
-    8 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    7 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    6 |   |   |   |   |   | X |   |   |
-      +---+---+---+---+---+---+---+---+
-    5 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    4 |   |   |   | X |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    3 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    2 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    1 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-
-
-        Queens not attacking
-
-            A   B   C   D   E   F   G   H  
-      +---+---+---+---+---+---+---+---+
-    8 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    7 |   |   | X |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    6 |   |   |   |   |   | X |   |   |
-      +---+---+---+---+---+---+---+---+
-    5 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    4 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    3 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    2 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-    1 |   |   |   |   |   |   |   |   |
-      +---+---+---+---+---+---+---+---+
-
-
-         */
-
-
-
-        public static void QueenAttack()
-        {
-            // English: Implementation for the Queen Attack problem
-            // Chinese: 皇后攻击问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the position of the first queen:", "Row: ", "Column: ", "Enter the position of the second queen:", "The queens can attack each other.", "The queens cannot attack each other." } :
-                new string[] { "输入第一个皇后的位置:", "行: ", "列: ", "输入第二个皇后的位置:", "皇后可以互相攻击.", "皇后无法互相攻击." };
-
-            int[][] board = new int[8][];
-            for (int i = 0; i < 8; i++)
-            {
-                board[i] = new int[8];
-            }
-            int queen1Row, queen1Col, queen2Row, queen2Col;
-
-            Console.WriteLine(languageStrings[0]);
-            Console.Write(languageStrings[1]);
-            queen1Row = int.Parse(Console.ReadLine());
-            Console.Write(languageStrings[2]);
-            queen1Col = int.Parse(Console.ReadLine());
-
-            Console.WriteLine(languageStrings[3]);
-            Console.Write(languageStrings[1]);
-            queen2Row = int.Parse(Console.ReadLine());
-            Console.Write(languageStrings[2]);
-            queen2Col = int.Parse(Console.ReadLine());
-
-            if (queen1Row == queen2Row || queen1Col == queen2Col || Math.Abs(queen1Row - queen2Row) == Math.Abs(queen1Col - queen2Col))
-            {
-                Console.WriteLine(languageStrings[4]);
-            }
-            else
-            {
-                Console.WriteLine(languageStrings[5]);
-            }
         }
 
         public static void Anagram()

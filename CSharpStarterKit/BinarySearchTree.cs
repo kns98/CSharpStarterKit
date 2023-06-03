@@ -73,26 +73,33 @@ namespace CSharpLearn
             return SearchNode(node.Right, value);
         }
 
-        public static void BCS(int languageChoice)
+        public static void BCS(Language languageChoice)
         {
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter the number to search: ", "Found", "Not found" } :
-                new string[] { "输入要搜索的数字: ", "找到了", "未找到" };
-
-            // Test case
-            BinarySearchTree<int> bst = new BinarySearchTree<int>(Comparer<int>.Default);
-            bst.Add(5);
-            bst.Add(2);
-            bst.Add(7);
-            bst.Add(1);
-            bst.Add(3);
+            string[] languageStrings = languageChoice == Language.English ?
+                new string[] { "Enter the values to search (space-separated): ", "Found", "Not found" } :
+                new string[] { "输入要搜索的值（以空格分隔）: ", "找到了", "未找到" };
 
             Console.Write(languageStrings[0]);
-            int searchValue = int.Parse(Console.ReadLine());
+            string inputValues = Console.ReadLine();
+
+            // Parse input values
+            string[] elements = inputValues.Split(' ');
+
+            // Test case
+            BinarySearchTree<string> bst = new BinarySearchTree<string>(Comparer<string>.Default);
+            foreach (string element in elements)
+            {
+                bst.Add(element);
+            }
+
+            Console.Write("Enter the value to search for:");
+            string searchValue = Console.ReadLine();
 
             bool contains = bst.Contains(searchValue);
             Console.WriteLine(contains ? languageStrings[1] : languageStrings[2]);
         }
+
+
 
 
     }
