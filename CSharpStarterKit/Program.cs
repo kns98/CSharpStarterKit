@@ -231,7 +231,7 @@ namespace CSharpLearn
                     Console.WriteLine("Description: Implements the Luhn algorithm for validating identification numbers.");
                     Console.WriteLine("Input: An identification number as a string.");
                     Console.WriteLine("Output: Returns a boolean value indicating whether the input number is valid according to the Luhn algorithm.");
-                    Luhn();
+                    LuhnMod.Luhn(languageChoice);
                     break;
                 case 12:
                     Console.WriteLine("Nth Prime");
@@ -385,47 +385,7 @@ namespace CSharpLearn
             Console.WriteLine(languageStrings[1] + binaryString);
         }
 
-        public static void Luhn()
-        {
-            // English: Implementation for the Luhn problem
-            // Chinese: Luhn算法问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { "Enter a credit card number: ", "The credit card number is valid.", "The credit card number is invalid." } :
-                new string[] { "输入一个信用卡号码: ", "信用卡号码有效.", "信用卡号码无效." };
-
-            Console.Write(languageStrings[0]);
-            string creditCardNumber = Console.ReadLine();
-
-            int[] digits = creditCardNumber.Where(char.IsDigit).Select(c => int.Parse(c.ToString())).ToArray();
-            int sum = 0;
-            bool doubleDigit = false;
-
-            for (int i = digits.Length - 1; i >= 0; i--)
-            {
-                int digit = digits[i];
-
-                if (doubleDigit)
-                {
-                    digit *= 2;
-                    if (digit > 9)
-                    {
-                        digit -= 9;
-                    }
-                }
-
-                sum += digit;
-                doubleDigit = !doubleDigit;
-            }
-
-            if (sum % 10 == 0)
-            {
-                Console.WriteLine(languageStrings[1]);
-            }
-            else
-            {
-                Console.WriteLine(languageStrings[2]);
-            }
-        }
+        
 
         public static void NucleotideCount()
         {
