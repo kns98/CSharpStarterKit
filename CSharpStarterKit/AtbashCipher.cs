@@ -16,7 +16,10 @@ namespace CSharpStarterKit
         private static List<char> Alphabet = new List<char>()
         {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            '一', '人', '大', '小', '中', '国', '日', '月', '水', '山',
+            '木', '火', '土', '金', '王', '女', '男', '子', '学', '爱', '家',
+            '食', '车', '书', '电'
         };
 
         private static string Encrypt(string plaintext)
