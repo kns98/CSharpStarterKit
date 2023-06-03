@@ -6,10 +6,6 @@
 
   Multidimensional Array: The board variable is declared as a multidimensional array (int[][]) to represent the chessboard.
 
-  Console.ReadLine(): The Console.ReadLine() method is used to read input from the console. It reads the user's input for queen positions.
-
-  int.Parse(): The int.Parse() method is used to convert the user's input from string to integer.
-
   Math.Abs(): The Math.Abs() method is used to calculate the absolute value of the difference between two numbers.
 
   Conditional Statements: The if-else statement is used to check if the queens can attack each other or not based on their positions. 

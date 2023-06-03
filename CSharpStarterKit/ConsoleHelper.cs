@@ -4,6 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * 
+  Console.ReadLine(): The Console.ReadLine() method is used to read input from the console. It reads the user's input for queen positions.
+  int.Parse(): The int.Parse() method is used to convert the user's input from string to integer.
+*
+*/
+
 namespace CSharpLearn
 {
     static class ConsoleHelper
