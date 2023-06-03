@@ -63,11 +63,13 @@
 */
 
 
+using System;
+
 namespace CSharpLearn
 {
+
     internal static class QueenAttackMod
     {
-
         public static void QueenAttack(Language languageChoice)
         {
             string[] languageStrings = languageChoice == Language.English ?
@@ -79,19 +81,16 @@ namespace CSharpLearn
             {
                 board[i] = new int[8];
             }
+
             int queen1Row, queen1Col, queen2Row, queen2Col;
 
             Console.WriteLine(languageStrings[0]);
-            Console.Write(languageStrings[1]);
-            queen1Row = int.Parse(Console.ReadLine());
-            Console.Write(languageStrings[2]);
-            queen1Col = int.Parse(Console.ReadLine());
+            queen1Row = ConsoleHelper.ReadInteger(languageStrings[1]);
+            queen1Col = ConsoleHelper.ReadInteger(languageStrings[2]);
 
             Console.WriteLine(languageStrings[3]);
-            Console.Write(languageStrings[1]);
-            queen2Row = int.Parse(Console.ReadLine());
-            Console.Write(languageStrings[2]);
-            queen2Col = int.Parse(Console.ReadLine());
+            queen2Row = ConsoleHelper.ReadInteger(languageStrings[1]);
+            queen2Col = ConsoleHelper.ReadInteger(languageStrings[2]);
 
             if (queen1Row == queen2Row || queen1Col == queen2Col || Math.Abs(queen1Row - queen2Row) == Math.Abs(queen1Col - queen2Col))
             {
