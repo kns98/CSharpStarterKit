@@ -6,16 +6,18 @@ namespace CSharpLearn
 
     public class AtbashCipher
     {
+        //the character list is not complete
+        //for demonstating functionality only
         private static List<char> Alphabet = new List<char>()
-    {
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-        'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-        '一', '人', '大', '小', '中', '国', '日', '月', '水', '山',
-        '木', '火', '土', '金', '王', '女', '男', '子', '学', '爱', '家',
-        '食', '车', '书', '电'
-    };
+        {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            '一', '人', '大', '小', '中', '国', '日', '月', '水', '山',
+            '木', '火', '土', '金', '王', '女', '男', '子', '学', '爱', '家',
+            '食', '车', '书', '电'
+        };
 
         private static string Encrypt(string plaintext)
         {
@@ -42,25 +44,29 @@ namespace CSharpLearn
 
         public void Go(Language languageChoice)
         {
-            Console.WriteLine("Enter the text to encrypt: ");
-            string plaintext = Console.ReadLine();
-
-            string encryptedText = Encrypt(plaintext);
-            Console.WriteLine("Encrypted text: " + encryptedText);
-
-            string decryptedText = Decrypt(encryptedText);
-            Console.WriteLine("Decrypted text: " + decryptedText);
-
-            List<char> encryptedList = new List<char>();
-            foreach (char c in encryptedText)
+            if (languageChoice == Language.English)
             {
-                encryptedList.Add(c);
-            }
+                Console.WriteLine("Character set: " + new string(Alphabet.ToArray()));
+                Console.WriteLine("Enter the text to encrypt: ");
+                string plaintext = Console.ReadLine();
 
-            Console.WriteLine("Encrypted List:");
-            foreach (char c in encryptedList)
+                string encryptedText = Encrypt(plaintext);
+                Console.WriteLine("Encrypted text: " + encryptedText);
+
+                string decryptedText = Decrypt(encryptedText);
+                Console.WriteLine("Decrypted text: " + decryptedText);
+            } 
+            else
             {
-                Console.Write(c + " ");
+                Console.WriteLine("字符集合：" + new string(Alphabet.ToArray()));
+                Console.WriteLine("输入要加密的文本：");
+                string plaintext = Console.ReadLine();
+
+                string encryptedText = Encrypt(plaintext);
+                Console.WriteLine("加密后的文本：" + encryptedText);
+
+                string decryptedText = Decrypt(encryptedText);
+                Console.WriteLine("解密后的文本：" + decryptedText);
             }
         }
     }
