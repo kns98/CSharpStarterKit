@@ -92,6 +92,7 @@ NB: Mei to write Chinese version
 */
 
 
+using CSharpStarterKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -171,7 +172,7 @@ namespace CSharpLearn
                     Console.WriteLine("What is Atbash Cipher?");
                     Console.WriteLine("Description: Implements the Atbash cipher, a simple substitution cipher.");
                     Console.WriteLine("Usage: The AtbashCipher class provides methods to encrypt and decrypt text using the Atbash cipher algorithm.");
-                    AtbashCipher();
+                    new AtbashCipher().Go(languageChoice);
                     break;
                 case 4:
                     Console.WriteLine("Beer Song");
@@ -315,11 +316,6 @@ namespace CSharpLearn
         private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
-        }
-
-        private static void AtbashCipher()
-        {
-            throw new NotImplementedException();
         }
 
         public static void Anagram()
