@@ -122,8 +122,39 @@ namespace CSharpLearn
 
             bool contains = bst.Contains(searchValue);
             Console.WriteLine(contains ? languageStrings[1] : languageStrings[2]);
+
+            bst.DrawTree();
         }
 
+        public void DrawTree()
+        {
+            if (root == null)
+            {
+                Console.WriteLine("Tree is empty.");
+                return;
+            }
+
+            DrawNode(root, "");
+        }
+
+        private void DrawNode(TreeNode<T> node, string indent)
+        {
+            if (node == null)
+                return;
+
+            // Print the node's value
+            Console.WriteLine(indent + node.Value);
+
+            // Generate the dashes for the branches
+            string branchIndent = indent + "├── ";
+            string subIndent = indent + "│   ";
+
+            // Recursively draw the left subtree
+            DrawNode(node.Left, node.Right != null ? branchIndent : subIndent);
+
+            // Recursively draw the right subtree
+            DrawNode(node.Right, subIndent);
+        }
 
 
 
