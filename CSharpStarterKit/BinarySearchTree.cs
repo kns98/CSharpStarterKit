@@ -100,11 +100,27 @@ namespace CSharpLearn
 
         public static void BCS(Language languageChoice)
         {
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter the values to search (space-separated): ", "Found", "Not found" } :
-                new string[] { "输入要搜索的值（以空格分隔）: ", "找到了", "未找到" };
+            string inputPrompt;
+            string searchPrompt;
+            string foundMessage;
+            string notFoundMessage;
 
-            Console.Write(languageStrings[0]);
+            if (languageChoice == Language.English)
+            {
+                inputPrompt = "Enter the values to search (text, space-separated): ";
+                searchPrompt = "Enter the value to search for: ";
+                foundMessage = "Found";
+                notFoundMessage = "Not found";
+            }
+            else
+            {
+                inputPrompt = "输入要搜索的值（用空格分隔）：";
+                searchPrompt = "输入要搜索的值：";
+                foundMessage = "找到";
+                notFoundMessage = "未找到";
+            }
+
+            Console.Write(inputPrompt);
             string inputValues = Console.ReadLine();
 
             // Parse input values
@@ -117,14 +133,15 @@ namespace CSharpLearn
                 bst.Add(element);
             }
 
-            Console.Write("Enter the value to search for (strings):");
+            Console.Write(searchPrompt);
             string searchValue = Console.ReadLine();
 
             bool contains = bst.Contains(searchValue);
-            Console.WriteLine(contains ? languageStrings[1] : languageStrings[2]);
+            Console.WriteLine(contains ? foundMessage : notFoundMessage);
 
             bst.DrawTree();
         }
+
 
         public void DrawTree()
         {
