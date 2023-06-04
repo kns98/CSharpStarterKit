@@ -2,6 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 
+/*
+ * A binary search tree (BST) is a hierarchical data structure that allows for efficient searching, 
+ * insertion, and deletion of elements. 
+ * 
+ * It follows this algorithm : for any node in the tree, all values 
+ * in its left subtree are less than the node's value, and all values in its right subtree are greater 
+ * than the node's value.
+
+   In the provided code, the `BinarySearchTree<T>` class represents a binary search tree. It is a generic 
+   class that can store elements of any data type `T`. Each element is wrapped in a `TreeNode<T>` object, 
+   which represents a node in the tree.
+
+   The `Add` method is used to insert elements into the binary search tree. It takes a value and recursively 
+   traverses the tree to find the correct position for insertion. If the value is less than or equal to the 
+   current node's value, it goes to the left subtree; otherwise, it goes to the right subtree. 
+   The new node is created and attached as the left or right child of an existing node, depending on the comparison result. 
+   This process continues until a suitable leaf node is found for insertion.
+
+   The `Contains` method is used to check if a specific value exists in the binary search tree. 
+   It starts the search from the root node and recursively compares the value with nodes in the tree. 
+   If a matching node is found, the method returns `true`. If the search reaches a null node (indicating 
+   that the value does not exist in the tree) or a matching node is found, the method returns `false`.
+
+*/
+
 namespace CSharpLearn
 {
     public class BinarySearchTree<T>
