@@ -103,14 +103,15 @@ namespace CSharpLearn
 
     public class Program
     {
-        static int languageChoice = 0;
-
+        static Language languageChoice = Language.English;
+        
         public static void Main(string[] args)
         {
             bool continuePlaying = true;
             Console.WriteLine("Choose a language:");
             Console.WriteLine("1. English");
             Console.WriteLine("2. Chinese");
+
             Language languageChoice = (Language)int.Parse(Console.ReadLine());
 
             while (continuePlaying)
@@ -300,17 +301,12 @@ namespace CSharpLearn
                     Console.WriteLine("What is Wordy?");
                     Console.WriteLine("Description: Linguistic tool for analyzing and processing natural language sentences.");
                     Console.WriteLine("Usage: Provides methods to parse sentences, identify parts of speech, extract meaningful information, and perform linguistic operations.");
-                    Wordy();
+                    
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
                     break;
             }
-        }
-
-        private static void Wordy()
-        {
-            throw new NotImplementedException();
         }
 
         private static void BinarySearchTree(Language languageChoice)
@@ -322,7 +318,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Anagram problem
             // Chinese: 字谜问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the first word: ", "Enter the second word: ", "The words are anagrams.", "The words are not anagrams." } :
                 new string[] { "输入第一个单词: ", "输入第二个单词: ", "这两个单词是字谜.", "这两个单词不是字谜." };
 
@@ -354,27 +350,33 @@ namespace CSharpLearn
         {
             // English: Implementation for the Beer Song problem
             // Chinese: 啤酒歌问题的实现
-            string[] languageStrings = languageChoice == 1 ?
-                new string[] { " bottles", " bottle", " of beer on the wall,", " of beer.", "Take one down and pass it around,", "No more bottles of beer on the wall, no more bottles of beer.", "Go to the store and buy some more,", " bottles of beer on the wall." } :
-                new string[] { " 瓶", " 瓶", " 的啤酒在墙上,", " 的啤酒.", "拿掉一瓶传来传去,", "没有啤酒在墙上, 没有啤酒.", "去商店买一些,", " 瓶的啤酒在墙上." };
+            string bottles = languageChoice == Language.English ? " bottles" : " 瓶";
+            string bottle = languageChoice == Language.English ? " bottle" : " 瓶";
+            string onTheWall = languageChoice == Language.English ? " of beer on the wall," : " 的啤酒在墙上,";
+            string ofBeer = languageChoice == Language.English ? " of beer." : " 的啤酒.";
+            string takeOneDown = languageChoice == Language.English ? "Take one down and pass it around," : "拿掉一瓶传来传去,";
+            string noMoreBottles = languageChoice == Language.English ? "No more bottles of beer on the wall, no more bottles of beer." : "没有啤酒在墙上, 没有啤酒.";
+            string goToStore = languageChoice == Language.English ? " Go to the store and buy some more," : "去商店买一些,";
+            string bottlesOnTheWall = languageChoice == Language.English ? " bottles of beer on the wall." : " 瓶的啤酒在墙上.";
 
             for (int i = 99; i > 0; i--)
             {
-                Console.WriteLine($"{i}{(i == 1 ? languageStrings[1] : languageStrings[0])}{languageStrings[2]} {i}{(i == 1 ? languageStrings[1] : languageStrings[0])}{languageStrings[3]}");
-                Console.WriteLine(languageStrings[4]);
-                Console.WriteLine($"{i - 1}{((i - 1) == 1 ? languageStrings[1] : languageStrings[0])}{languageStrings[6]}\n");
+                Console.WriteLine($"{i}{(i == 1 ? bottle : bottles)}{onTheWall} {i}{(i == 1 ? bottle : bottles)}{ofBeer}");
+                Console.WriteLine(takeOneDown);
+                Console.WriteLine($"{i - 1}{((i - 1) == 1 ? bottle : bottles)}{goToStore}\n");
             }
 
-            Console.WriteLine(languageStrings[5]);
-            Console.WriteLine(languageStrings[6]);
-            Console.WriteLine($"99{languageStrings[0]}{languageStrings[7]}\n");
+            Console.WriteLine(noMoreBottles);
+            Console.WriteLine(goToStore.Trim());
+            Console.WriteLine($"99{bottles}{bottlesOnTheWall}\n");
         }
+
 
         public static void Binary()
         {
             // English: Implementation for the Binary problem
             // Chinese: 二进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a decimal number: ", "The binary representation is: " } :
                 new string[] { "输入一个十进制数: ", "二进制表示为: " };
 
@@ -391,7 +393,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Nucleotide Count problem
             // Chinese: 核苷酸计数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a DNA sequence: ", "A:", "C:", "G:", "T:" } :
                 new string[] { "输入一个DNA序列: ", "A:", "C:", "G:", "T:" };
 
@@ -424,7 +426,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Palindrome Products problem
             // Chinese: 回文乘积问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the minimum value: ", "Enter the maximum value: ", "No palindrome products found.", "The largest palindrome product is: " } :
                 new string[] { "输入最小值: ", "输入最大值: ", "未找到回文乘积.", "最大回文乘积是: " };
 
@@ -474,7 +476,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Pascal's Triangle problem
             // Chinese: 帕斯卡三角形问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the number of rows: " } :
                 new string[] { "输入行数: " };
 
@@ -515,7 +517,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Triangle problem
             // Chinese: 三角形问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the number of rows: " } :
                 new string[] { "输入行数: " };
 
@@ -533,7 +535,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Accumulate problem
             // Chinese: 累积问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a series of numbers (separated by spaces): " } :
                 new string[] { "输入一系列数字（以空格分隔）: " };
 
@@ -557,7 +559,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Clock problem
             // Chinese: 时钟问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the hours: ", "Enter the minutes: ", "Invalid time." } :
                 new string[] { "输入小时: ", "输入分钟: ", "无效的时间." };
 
@@ -585,7 +587,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Hexadecimal problem
             // Chinese: 十六进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a decimal number: ", "The hexadecimal representation is: " } :
                 new string[] { "输入一个十进制数: ", "十六进制表示为: " };
 
@@ -600,7 +602,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Linked List problem
             // Chinese: 链表问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the elements of the linked list (separated by spaces): ", "The linked list: ", "The reversed linked list: " } :
                 new string[] { "输入链表元素（以空格分隔）: ", "链表: ", "反转后的链表: " };
 
@@ -631,7 +633,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Trinary problem
             // Chinese: 三进制问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a trinary number: ", "The decimal representation is: " } :
                 new string[] { "输入一个三进制数: ", "十进制表示为: " };
 
@@ -662,7 +664,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Word Count problem
             // Chinese: 单词计数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a sentence: ", "The word count is: " } :
                 new string[] { "输入一个句子: ", "单词数量为: " };
 
@@ -679,7 +681,7 @@ namespace CSharpLearn
         {
             // English: Implementation for the Nth Prime problem
             // Chinese: 第N个质数问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the value of N: ", "The Nth prime number is: " } :
                 new string[] { "输入N的值: ", "第N个质数为: " };
 
@@ -759,11 +761,11 @@ namespace CSharpLearn
         The compound assignment operators provide a shorthand notation for performing an arithmetic operation and assigning the result back to the same variable, which can make the code more concise and readable.
     */
 
-        public static void Wordy(int languageChoice)
+        public static void Wordy()
         {
             // English: Implementation for the Wordy problem
             // Chinese: Wordy问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a word problem: ", "Invalid question.", "The answer is: " } :
                 new string[] { "输入一个单词问题: ", "无效的问题.", "答案是: " };
 
@@ -813,11 +815,11 @@ namespace CSharpLearn
             Console.WriteLine(languageStrings[2] + result);
         }
 
-        public static void AtbashCipher(int languageChoice)
+        public static void AtbashCipher()
         {
             // English: Implementation for the Atbash Cipher problem
             // Chinese: Atbash密码问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a message: ", "The encoded message is: " } :
                 new string[] { "输入一条消息: ", "编码后的消息为: " };
 
@@ -847,14 +849,14 @@ namespace CSharpLearn
         {
             // English: Implementation for the Bob problem
             // Chinese: Bob问题的实现
-            string[] languageStrings = languageChoice == 1 ?
+            string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter a phrase to Bob: ", "Bob's response: " } :
                 new string[] { "输入要与Bob交流的短语: ", "Bob的回应: " };
 
             Console.Write(languageStrings[0]);
             string phrase = Console.ReadLine();
             string response = "";
-            if (languageChoice == 1)
+            if (languageChoice == Language.English)
             {
                 response = BobResponse(phrase);
             }
