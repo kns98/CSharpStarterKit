@@ -15,6 +15,12 @@ namespace CSharpLearn
 {
     static class ConsoleHelper
     {
+        public static string ReadString(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
+
         public static int ReadInteger(string prompt)
         {
             int value;
@@ -36,4 +42,7 @@ namespace CSharpLearn
             return value;
         }
     }
+
+
+
 }

@@ -166,7 +166,7 @@ namespace CSharpLearn
                     Console.WriteLine("Description: Checks if two input strings are anagrams (contain the same characters in a different order).");
                     Console.WriteLine("Input: Two strings.");
                     Console.WriteLine("Output: Returns a boolean value indicating whether the input strings are anagrams or not.");
-                    Anagram();
+                    AnagramMod.Anagram(languageChoice);
                     break;
                 case 3:
                     Console.WriteLine("Atbash Cipher");
@@ -312,38 +312,6 @@ namespace CSharpLearn
         private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
-        }
-
-        public static void Anagram()
-        {
-            // English: Implementation for the Anagram problem
-            // Chinese: 字谜问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter the first word: ", "Enter the second word: ", "The words are anagrams.", "The words are not anagrams." } :
-                new string[] { "输入第一个单词: ", "输入第二个单词: ", "这两个单词是字谜.", "这两个单词不是字谜." };
-
-            Console.Write(languageStrings[0]);
-            string word1 = Console.ReadLine();
-            Console.Write(languageStrings[1]);
-            string word2 = Console.ReadLine();
-
-            char[] chars1 = word1.ToLower().ToCharArray();
-            char[] chars2 = word2.ToLower().ToCharArray();
-
-            Array.Sort(chars1);
-            Array.Sort(chars2);
-
-            string sortedWord1 = new string(chars1);
-            string sortedWord2 = new string(chars2);
-
-            if (sortedWord1 == sortedWord2)
-            {
-                Console.WriteLine(languageStrings[2]);
-            }
-            else
-            {
-                Console.WriteLine(languageStrings[3]);
-            }
         }
 
         public static void BeerSong()
