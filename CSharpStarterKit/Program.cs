@@ -93,6 +93,7 @@ NB: Mei to write Chinese version
 
 
 
+using CSharpStarterKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -301,7 +302,7 @@ namespace CSharpLearn
                     Console.WriteLine("What is Wordy?");
                     Console.WriteLine("Description: Linguistic tool for analyzing and processing natural language sentences.");
                     Console.WriteLine("Usage: Provides methods to parse sentences, identify parts of speech, extract meaningful information, and perform linguistic operations.");
-                    
+                    WordyMod.Wordy(languageChoice);
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
@@ -655,98 +656,9 @@ namespace CSharpLearn
             return true;
         }
 
-        /*
+      
 
-        1. Addition (`+`):
-           - Operator: `+`
-           - Description: The `+` operator is used for addition. It adds the value on the right-hand side to the value
-            on the left-hand side and returns the sum.
-           - Example: `result = result + int.Parse(words[i + 1])`
-
-        2. Subtraction (`-`):
-           - Operator: `-`
-           - Description: The `-` operator is used for subtraction. It subtracts the value on the right-hand side from
-            the value on the left-hand side and returns the difference.
-           - Example: `result = result - int.Parse(words[i + 1])`
-
-        3. Multiplication (`*`):
-           - Operator: `*`
-           - Description: The `*` operator is used for multiplication. It multiplies the value on the right-hand side
-            with the value on the left-hand side and returns the product.
-           - Example: `result = result * int.Parse(words[i + 2])`
-
-        4. Division (`/`):
-           - Operator: `/`
-           - Description: The `/` operator is used for division. It divides the value on the left-hand side by the
-            value on the right-hand side and returns the quotient.
-           - Example: `result = result / int.Parse(words[i + 2])`
-
-        5. Compound Assignment (`+=`, `-=`, `*=`, `/=`):
-           - Compound Assignment Operators: `+=`, `-=`, `*=`, `/=`
-           - Description: Compound assignment operators combine an arithmetic operation with assignment.
-            They perform the arithmetic operation on the variables on both sides of the operator and assign the result back to the variable on the left-hand side.
-           - Example: 
-             - `result += int.Parse(words[i + 1])` is equivalent to `result = result + int.Parse(words[i + 1])`.
-             - `result -= int.Parse(words[i + 1])` is equivalent to `result = result - int.Parse(words[i + 1])`.
-             - `result *= int.Parse(words[i + 2])` is equivalent to `result = result * int.Parse(words[i + 2])`.
-             - `result /= int.Parse(words[i + 2])` is equivalent to `result = result / int.Parse(words[i + 2])`.
-
-        The compound assignment operators provide a shorthand notation for performing an arithmetic operation and assigning the result back to the same variable, which can make the code more concise and readable.
-    */
-
-        public static void Wordy()
-        {
-            // English: Implementation for the Wordy problem
-            // Chinese: Wordy问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter a word problem: ", "Invalid question.", "The answer is: " } :
-                new string[] { "输入一个单词问题: ", "无效的问题.", "答案是: " };
-
-            Console.Write(languageStrings[0]);
-            string problem = Console.ReadLine().ToLower();
-
-            string[] words = problem.Split(' ');
-            int length = words.Length;
-
-            if (length < 3 || length % 2 == 0 || !words[0].Equals("what") || !words[length - 1].Equals("equal"))
-            {
-                Console.WriteLine(languageStrings[1]);
-                return;
-            }
-
-            int result = int.Parse(words[2]);
-
-            for (int i = 3; i < length - 2; i += 2)
-            {
-                string operatorWord = words[i];
-
-                if (operatorWord.Equals("plus"))
-                {
-                    result += int.Parse(words[i + 1]);
-                }
-                else if (operatorWord.Equals("minus"))
-                {
-                    result -= int.Parse(words[i + 1]);
-                }
-                else if (operatorWord.Equals("multiplied"))
-                {
-                    result *= int.Parse(words[i + 2]);
-                    i++;
-                }
-                else if (operatorWord.Equals("divided"))
-                {
-                    result /= int.Parse(words[i + 2]);
-                    i++;
-                }
-                else
-                {
-                    Console.WriteLine(languageStrings[1]);
-                    return;
-                }
-            }
-
-            Console.WriteLine(languageStrings[2] + result);
-        }
+      
 
         public static void AtbashCipher()
         {
