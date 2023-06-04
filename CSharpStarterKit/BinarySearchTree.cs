@@ -117,7 +117,7 @@ namespace CSharpLearn
                 bst.Add(element);
             }
 
-            Console.Write("Enter the value to search for:");
+            Console.Write("Enter the value to search for (strings):");
             string searchValue = Console.ReadLine();
 
             bool contains = bst.Contains(searchValue);
