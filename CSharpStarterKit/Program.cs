@@ -190,7 +190,7 @@ namespace CSharpLearn
                     Console.WriteLine("Description: Converts a decimal number into its binary representation.");
                     Console.WriteLine("Input: A decimal number.");
                     Console.WriteLine("Output: Returns a string representing the binary equivalent of the input number.");
-                    Binary();
+                    BinaryMod.Binary(languageChoice);
                     break;
                 case 6:
                     Console.WriteLine("Binary Search Tree");
@@ -313,21 +313,6 @@ namespace CSharpLearn
         private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
-        }
-
-        public static void Binary()
-        {
-            // English: Implementation for the Binary problem
-            // Chinese: 二进制问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter a decimal number: ", "The binary representation is: " } :
-                new string[] { "输入一个十进制数: ", "二进制表示为: " };
-
-            Console.Write(languageStrings[0]);
-            int decimalNumber = int.Parse(Console.ReadLine());
-
-            string binaryString = Convert.ToString(decimalNumber, 2);
-            Console.WriteLine(languageStrings[1] + binaryString);
         }
 
         public static void PalindromeProducts()
