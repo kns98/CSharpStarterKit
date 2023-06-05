@@ -487,8 +487,31 @@ namespace CSharpLearn
             Console.Write(languageStrings[0]);
             int decimalNumber = int.Parse(Console.ReadLine());
 
-            string hexadecimalString = decimalNumber.ToString("X");
-            Console.WriteLine(languageStrings[1] + hexadecimalString);
+            int index = 0;
+
+            char[] hexadecimal = new char[32];
+            // Convert decimal to hexadecimal
+            while (decimalNumber != 0)
+            {
+                int remainder = decimalNumber % 16;
+
+                if (remainder < 10)
+                {
+                    hexadecimal[index] = (char)(remainder + '0');
+                }
+                else
+                {
+                    hexadecimal[index] = (char)(remainder - 10 + 'A');
+                }
+
+                decimalNumber /= 16;
+                index++;
+            }
+
+            // Add null terminator to the end of the hexadecimal array
+            hexadecimal[index] = '\0';
+
+            Console.WriteLine(languageStrings[1] + string.Join("", hexadecimal));
         }
 
         public static void LinkedList()
