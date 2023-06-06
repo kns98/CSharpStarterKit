@@ -9,6 +9,7 @@ namespace CSharpStarterKit
 {
     internal class HexadecimalMod
     {
+
         public static void Hexadecimal(Language languageChoice)
         {
             // English: Implementation for the Hexadecimal problem
