@@ -117,27 +117,54 @@ namespace CSharpLearn
 
             while (continuePlaying)
             {
-                Console.WriteLine("Choose a game:");
-                Console.WriteLine("1. Accumulate");
-                Console.WriteLine("2. Anagram");
-                Console.WriteLine("3. Atbash Cipher");
-                Console.WriteLine("4. Beer Song");
-                Console.WriteLine("5. Binary");
-                Console.WriteLine("6. Binary Search Tree");
-                Console.WriteLine("7. Bob");
-                Console.WriteLine("8. Clock");
-                Console.WriteLine("9. Hexadecimal");
-                Console.WriteLine("10. Linked List");
-                Console.WriteLine("11. Luhn");
-                Console.WriteLine("12. Nth Prime");
-                Console.WriteLine("13. Nucleotide Count");
-                Console.WriteLine("14. Palindrome Products");
-                Console.WriteLine("15. Pascal's Triangle");
-                Console.WriteLine("16. Queen Attack");
-                Console.WriteLine("17. Trinary");
-                Console.WriteLine("18. Triangle");
-                Console.WriteLine("19. Word Count");
-                Console.WriteLine("20. Wordy");
+                if (languageChoice == Language.English)
+                {
+                    Console.WriteLine("Choose a game:");
+                    Console.WriteLine("1. Accumulate");
+                    Console.WriteLine("2. Anagram");
+                    Console.WriteLine("3. Atbash Cipher");
+                    Console.WriteLine("4. Beer Song");
+                    Console.WriteLine("5. Binary");
+                    Console.WriteLine("6. Binary Search Tree");
+                    Console.WriteLine("7. Bob");
+                    Console.WriteLine("8. Clock");
+                    Console.WriteLine("9. Hexadecimal");
+                    Console.WriteLine("10. Linked List");
+                    Console.WriteLine("11. Luhn");
+                    Console.WriteLine("12. Nth Prime");
+                    Console.WriteLine("13. Nucleotide Count");
+                    Console.WriteLine("14. Palindrome Products");
+                    Console.WriteLine("15. Pascal's Triangle");
+                    Console.WriteLine("16. Queen Attack");
+                    Console.WriteLine("17. Trinary");
+                    Console.WriteLine("18. Triangle");
+                    Console.WriteLine("19. Word Count");
+                    Console.WriteLine("20. Wordy");
+                }
+                else
+                {
+                    Console.WriteLine("选择一个游戏：");
+                    Console.WriteLine("1. 累加");
+                    Console.WriteLine("2. 字母重排");
+                    Console.WriteLine("3. Atbash 密码");
+                    Console.WriteLine("4. 啤酒歌");
+                    Console.WriteLine("5. 二进制");
+                    Console.WriteLine("6. 二叉搜索树");
+                    Console.WriteLine("7. 鲍勃");
+                    Console.WriteLine("8. 时钟");
+                    Console.WriteLine("9. 十六进制");
+                    Console.WriteLine("10. 链表");
+                    Console.WriteLine("11. Luhn 算法");
+                    Console.WriteLine("12. 第 N 个素数");
+                    Console.WriteLine("13. 核苷酸计数");
+                    Console.WriteLine("14. 回文乘积");
+                    Console.WriteLine("15. 帕斯卡三角形");
+                    Console.WriteLine("16. 皇后攻击");
+                    Console.WriteLine("17. 三进制");
+                    Console.WriteLine("18. 三角形");
+                    Console.WriteLine("19. 单词计数");
+                    Console.WriteLine("20. Wordy 游戏");
+                }
 
                 int gameChoice = int.Parse(Console.ReadLine());
                 ChooseGame(gameChoice, languageChoice);
