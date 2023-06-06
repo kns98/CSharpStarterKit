@@ -167,7 +167,17 @@ namespace CSharpLearn
                 }
 
                 int gameChoice = int.Parse(Console.ReadLine());
-                ChooseGame(gameChoice, languageChoice);
+
+                if (languageChoice == Language.Chinese)
+                {
+                    ChooseGameCn(gameChoice, languageChoice);
+                }
+
+
+                if (languageChoice == Language.English)
+                {
+                    ChooseGameEng(gameChoice, languageChoice);
+                }
 
                 Console.WriteLine("Do you want to continue playing? (y/n)");
                 string continueChoice = Console.ReadLine();
@@ -176,7 +186,169 @@ namespace CSharpLearn
             }
         }
 
-        private static void ChooseGame(int gameChoice, Language languageChoice)
+        private static void ChooseGameCn(int gameChoice, Language languageChoice)
+        {
+            switch (gameChoice)
+            {
+                case 1:
+                    Console.WriteLine("累加");
+                    Console.WriteLine("什么是累加？");
+                    Console.WriteLine("描述：对给定的数字列表执行指定的操作（求和、乘积等），并返回结果。");
+                    Console.WriteLine("输入：数字列表和要执行的操作。");
+                    Console.WriteLine("输出：返回对输入数字进行操作的累积结果。");
+                    Accumulate();
+                    break;
+                case 2:
+                    Console.WriteLine("字母重排");
+                    Console.WriteLine("什么是字母重排？");
+                    Console.WriteLine("描述：检查两个输入字符串是否是字母重排（包含相同字符但顺序不同）。");
+                    Console.WriteLine("输入：两个字符串。");
+                    Console.WriteLine("输出：返回一个布尔值，指示输入的字符串是否是字母重排。");
+                    AnagramMod.Anagram(languageChoice);
+                    break;
+                case 3:
+                    Console.WriteLine("Atbash 密码");
+                    Console.WriteLine("什么是 Atbash 密码？");
+                    Console.WriteLine("描述：实现 Atbash 密码，一种简单的替换密码。");
+                    Console.WriteLine("用法：AtbashCipher 类提供使用 Atbash 密码算法加密和解密文本的方法。");
+                    new AtbashCipher().Go(languageChoice);
+                    break;
+                case 4:
+                    Console.WriteLine("啤酒歌");
+                    Console.WriteLine("什么是啤酒歌？");
+                    Console.WriteLine("描述：生成经典的“99 瓶啤酒”歌曲的歌词。");
+                    Console.WriteLine("输入：开始的瓶子数量。");
+                    Console.WriteLine("输出：返回歌曲的歌词。");
+                    BeerSongMod.BeerSong(languageChoice);
+                    break;
+                case 5:
+                    Console.WriteLine("二进制");
+                    Console.WriteLine("什么是二进制？");
+                    Console.WriteLine("描述：将十进制数转换为二进制表示。");
+                    Console.WriteLine("输入：一个十进制数。");
+                    Console.WriteLine("输出：返回表示输入数的二进制字符串。");
+                    BinaryMod.Binary(languageChoice);
+                    break;
+                case 6:
+                    Console.WriteLine("二叉搜索树");
+                    Console.WriteLine("什么是二叉搜索树？");
+                    Console.WriteLine("描述：表示一种二叉搜索树，一种层次化的数据结构。");
+                    Console.WriteLine("用法：BinarySearchTree 类提供插入、删除和搜索树中元素的方法。");
+                    BinarySearchTree(languageChoice);
+                    break;
+                case 7:
+                    Console.WriteLine("鲍勃");
+                    Console.WriteLine("什么是鲍勃？");
+                    Console.WriteLine("描述：一个对话式聊天机器人，响应用户输入。");
+                    Console.WriteLine("用法：Bob 类利用自然语言处理技术理解和与用户交互。");
+                    BobRobot.Bob(languageChoice);
+                    break;
+                case 8:
+                    Console.WriteLine("时钟");
+                    Console.WriteLine("什么是时钟？");
+                    Console.WriteLine("描述：表示一个可以用来跟踪时间的数字时钟。");
+                    Console.WriteLine("用法：Clock 类提供设置时间的功能。");
+                    Clock();
+                    break;
+                case 9:
+                    Console.WriteLine("十六进制");
+                    Console.WriteLine("什么是十六进制？");
+                    Console.WriteLine("描述：用于在十进制和十六进制表示之间进行转换的实用类。");
+                    Console.WriteLine("用法：提供将十进制数转换为十六进制格式和将十六进制数转换为十进制格式的方法。");
+                    HexadecimalMod.Hexadecimal(languageChoice);
+                    break;
+                case 10:
+                    Console.WriteLine("链表");
+                    Console.WriteLine("什么是链表？");
+                    Console.WriteLine("描述：表示一种线性数据结构，其中元素按顺序存储并使用指针链接。");
+                    Console.WriteLine("用法：LinkedList 类提供插入、删除和检索列表中的元素的方法。");
+                    LinkedList();
+                    break;
+                case 11:
+                    Console.WriteLine("Luhn");
+                    Console.WriteLine("什么是 Luhn？");
+                    Console.WriteLine("描述：实现用于验证识别号码的 Luhn 算法。");
+                    Console.WriteLine("输入：作为字符串的识别号码。");
+                    Console.WriteLine("输出：返回一个布尔值，指示输入号码是否根据 Luhn 算法有效。");
+                    LuhnMod.Luhn(languageChoice);
+                    break;
+                case 12:
+                    Console.WriteLine("第 N 个素数");
+                    Console.WriteLine("什么是第 N 个素数？");
+                    Console.WriteLine("描述：计算第 N 个素数的数学实用类。");
+                    Console.WriteLine("用法：提供计算和检索特定索引处的素数的方法。");
+                    NthPrime();
+                    break;
+                case 13:
+                    Console.WriteLine("核苷酸计数");
+                    Console.WriteLine("什么是核苷酸计数？");
+                    Console.WriteLine("描述：计算 DNA 链中核苷酸（A、C、G、T）的出现次数。");
+                    Console.WriteLine("输入：作为字符串的 DNA 链。");
+                    Console.WriteLine("输出：返回包含每个核苷酸计数的字典或关联数组。");
+                    NucleotideCountMod.NucleotideCount(languageChoice);
+                    break;
+                case 14:
+                    Console.WriteLine("回文乘积");
+                    Console.WriteLine("什么是回文乘积？");
+                    Console.WriteLine("描述：在给定范围内，找到可以由两个数的乘积得到的最大和最小回文数。");
+                    Console.WriteLine("输入：一个数字范围。");
+                    Console.WriteLine("输出：返回最大和最小回文数，以及生成它们的因子。");
+                    PalindromeMod.PalindromeProducts(languageChoice);
+                    break;
+                case 15:
+                    Console.WriteLine("帕斯卡三角形");
+                    Console.WriteLine("什么是帕斯卡三角形？");
+                    Console.WriteLine("描述：生成帕斯卡三角形，生成指定行数的三角形。");
+                    Console.WriteLine("帕斯卡三角形是以法国数学家布莱兹·帕斯卡命名的一个数列。三角形中的每个数是它上方两个数之和。");
+                    Console.WriteLine("输入：三角形的行数。");
+                    Console.WriteLine("输出：返回表示帕斯卡三角形的二维数组。");
+                    PascalsTriangle();
+                    break;
+                case 16:
+                    Console.WriteLine("皇后攻击");
+                    Console.WriteLine("什么是皇后攻击？");
+                    Console.WriteLine("描述：根据皇后的位置确定两个皇后是否能够互相攻击。");
+                    Console.WriteLine("输入：两个皇后的位置。");
+                    Console.WriteLine("输出：返回一个消息，指示皇后是否能够互相攻击。");
+                    QueenAttackMod.QueenAttack(languageChoice);
+                    break;
+                case 17:
+                    Console.WriteLine("三进制");
+                    Console.WriteLine("什么是三进制？");
+                    Console.WriteLine("描述：用于处理三进制数（基数为3）的实用类。");
+                    Console.WriteLine("用法：提供将三进制数转换为十进制和反之的功能，并对三进制数进行操作。");
+                    Trinary();
+                    break;
+                case 18:
+                    Console.WriteLine("三角形");
+                    Console.WriteLine("什么是三角形？");
+                    Console.WriteLine("描述：根据三角形的边长确定三角形的类型（等边、等腰、不等边）。");
+                    Console.WriteLine("输入：三角形的三条边的长度。");
+                    Console.WriteLine("输出：返回一个字符串，指示三角形的类型。");
+                    Triangle();
+                    break;
+                case 19:
+                    Console.WriteLine("单词计数");
+                    Console.WriteLine("什么是单词计数？");
+                    Console.WriteLine("描述：用于计算给定文本或文档中单词出现次数的实用类。");
+                    Console.WriteLine("用法：提供处理输入文本、将其分词为单词并生成每个单词计数的方法。");
+                    WordCount();
+                    break;
+                case 20:
+                    Console.WriteLine("语言处理");
+                    Console.WriteLine("什么是语言处理？");
+                    Console.WriteLine("描述：用于分析和处理自然语言句子的语言工具。");
+                    Console.WriteLine("用法：提供解析句子、识别词性、提取有意义的信息和执行语言操作的方法。");
+                    WordyMod.Wordy(languageChoice);
+                    break;
+                default:
+                    Console.WriteLine("无效选择");
+                    break;
+            }
+        }
+
+
+        private static void ChooseGameEng(int gameChoice, Language languageChoice)
         {
             switch (gameChoice)
             {
