@@ -15,7 +15,7 @@ namespace CSharpStarterKit
             // Chinese: 链表问题的实现
             string[] languageStrings = languageChoice == Language.English ?
                 new string[] { "Enter the elements (numbers) of the linked list (separated by spaces): ", "The linked list: ", "The reversed linked list: " } :
-                new string[] { "输入链表元素（以空格分隔）: ", "链表: ", "反转后的链表: " };
+                new string[] { "输入链表元素（数字）（用空格分隔。）: ", "链表: ", "反转后的链表: " };
 
             Console.Write(languageStrings[0]);
             string input = Console.ReadLine();
