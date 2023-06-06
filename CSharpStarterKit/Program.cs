@@ -302,7 +302,7 @@ namespace CSharpLearn
                     Console.WriteLine("帕斯卡三角形是以法国数学家布莱兹·帕斯卡命名的一个数列。三角形中的每个数是它上方两个数之和。");
                     Console.WriteLine("输入：三角形的行数。");
                     Console.WriteLine("输出：返回表示帕斯卡三角形的二维数组。");
-                    PascalsTriangle();
+                    PascalsTriangleMod.PascalsTriangle(languageChoice);
                     break;
                 case 16:
                     Console.WriteLine("皇后攻击");
@@ -464,7 +464,7 @@ namespace CSharpLearn
                     Console.WriteLine("Pascal's Triangle is a triangular array of numbers named after the French mathematician Blaise Pascal. Each number in the triangle is the sum of the two numbers directly above it.");
                     Console.WriteLine("Input: The number of rows for the triangle.");
                     Console.WriteLine("Output: Returns a two-dimensional array representing Pascal's Triangle.");
-                    PascalsTriangle();
+                    PascalsTriangleMod.PascalsTriangle(languageChoice);
                     break;
                 case 16:
                     Console.WriteLine("Queen Attack");
@@ -512,33 +512,6 @@ namespace CSharpLearn
         private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
-        }
-
-        public static void PascalsTriangle()
-        {
-            // English: Implementation for the Pascal's Triangle problem
-            // Chinese: 帕斯卡三角形问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter the number of rows: " } :
-                new string[] { "输入行数: " };
-
-            int numRows = ConsoleHelper.ReadInteger(languageStrings[0]);
-            // C# program for Pascal's Triangle
-            // A O(n^2) time and O(1) extra
-            // space method for Pascal's Triangle
-            for (int line = 1; line <= numRows; line++)
-            {
-
-                int C = 1;// used to represent C(line, i)
-                for (int i = 1; i <= line; i++)
-                {
-                    // The first value in a
-                    // line is always 1
-                    Console.Write(C + " ");
-                    C = C * (line - i) / i;
-                }
-                Console.Write("\n");
-            }
         }
 
         public static void Triangle()
