@@ -105,7 +105,7 @@ namespace CSharpLearn
     public class Program
     {
         static Language languageChoice = Language.English;
-        
+
         public static void Main(string[] args)
         {
             bool continuePlaying = true;
@@ -522,36 +522,22 @@ namespace CSharpLearn
                 new string[] { "Enter the number of rows: " } :
                 new string[] { "输入行数: " };
 
-            Console.Write(languageStrings[0]);
-            int numRows = int.Parse(Console.ReadLine());
-
-            List<List<int>> triangle = new List<List<int>>();
-
-            for (int i = 0; i < numRows; i++)
+            int numRows = ConsoleHelper.ReadInteger(languageStrings[0]);
+            // C# program for Pascal's Triangle
+            // A O(n^2) time and O(1) extra
+            // space method for Pascal's Triangle
+            for (int line = 1; line <= numRows; line++)
             {
-                List<int> row = new List<int>();
 
-                for (int j = 0; j <= i; j++)
+                int C = 1;// used to represent C(line, i)
+                for (int i = 1; i <= line; i++)
                 {
-                    if (j == 0 || j == i)
-                    {
-                        row.Add(1);
-                    }
-                    else
-                    {
-                        int left = triangle[i - 1][j - 1];
-                        int right = triangle[i - 1][j];
-                        row.Add(left + right);
-                    }
+                    // The first value in a
+                    // line is always 1
+                    Console.Write(C + " ");
+                    C = C * (line - i) / i;
                 }
-
-                triangle.Add(row);
-            }
-
-            foreach (List<int> row in triangle)
-            {
-                string rowString = string.Join(" ", row);
-                Console.WriteLine(rowString);
+                Console.Write("\n");
             }
         }
 
@@ -749,9 +735,9 @@ namespace CSharpLearn
             return true;
         }
 
-      
 
-      
+
+
 
         public static void AtbashCipher()
         {
@@ -786,6 +772,6 @@ namespace CSharpLearn
 
 
     }
+}
 
   
-}
