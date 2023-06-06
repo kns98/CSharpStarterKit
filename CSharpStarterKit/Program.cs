@@ -256,7 +256,7 @@ namespace CSharpLearn
                     Console.WriteLine("Description: Finds the largest and smallest palindrome numbers that can be obtained as the product of two numbers within a given range.");
                     Console.WriteLine("Input: A range of numbers.");
                     Console.WriteLine("Output: Returns the largest and smallest palindrome numbers, along with the factors that produce them.");
-                    PalindromeProducts();
+                    PalindromeMod.PalindromeProducts(languageChoice);
                     break;
                 case 15:
                     Console.WriteLine("Pascal's Triangle");
@@ -313,56 +313,6 @@ namespace CSharpLearn
         private static void BinarySearchTree(Language languageChoice)
         {
             CSharpLearn.BinarySearchTree<object>.BCS(languageChoice);
-        }
-
-        public static void PalindromeProducts()
-        {
-            // English: Implementation for the Palindrome Products problem
-            // Chinese: 回文乘积问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter the minimum value: ", "Enter the maximum value: ", "No palindrome products found.", "The largest palindrome product is: " } :
-                new string[] { "输入最小值: ", "输入最大值: ", "未找到回文乘积.", "最大回文乘积是: " };
-
-            Console.Write(languageStrings[0]);
-            int min = int.Parse(Console.ReadLine());
-            Console.Write(languageStrings[1]);
-            int max = int.Parse(Console.ReadLine());
-
-            int largestPalindrome = 0;
-            List<Tuple<int, int>> largestPalindromeFactors = new List<Tuple<int, int>>();
-
-            for (int i = min; i <= max; i++)
-            {
-                for (int j = i; j <= max; j++)
-                {
-                    int product = i * j;
-                    string productString = product.ToString();
-
-                    if (productString == new string(productString.Reverse().ToArray()) && product > largestPalindrome)
-                    {
-                        largestPalindrome = product;
-                        largestPalindromeFactors.Clear();
-                        largestPalindromeFactors.Add(new Tuple<int, int>(i, j));
-                    }
-                    else if (product == largestPalindrome)
-                    {
-                        largestPalindromeFactors.Add(new Tuple<int, int>(i, j));
-                    }
-                }
-            }
-
-            if (largestPalindromeFactors.Count == 0)
-            {
-                Console.WriteLine(languageStrings[2]);
-            }
-            else
-            {
-                Console.WriteLine(languageStrings[3] + largestPalindrome);
-                foreach (var factors in largestPalindromeFactors)
-                {
-                    Console.WriteLine($"{factors.Item1} x {factors.Item2}");
-                }
-            }
         }
 
         public static void PascalsTriangle()
