@@ -14,7 +14,7 @@ namespace CSharpStarterKit
             // English: Implementation for the Linked List problem
             // Chinese: 链表问题的实现
             string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter the elements of the linked list (separated by spaces): ", "The linked list: ", "The reversed linked list: " } :
+                new string[] { "Enter the elements (numbers) of the linked list (separated by spaces): ", "The linked list: ", "The reversed linked list: " } :
                 new string[] { "输入链表元素（以空格分隔）: ", "链表: ", "反转后的链表: " };
 
             Console.Write(languageStrings[0]);
@@ -30,10 +30,8 @@ namespace CSharpStarterKit
             }
             Console.WriteLine();
 
-            linkedList.Reverse();
-
             Console.Write(languageStrings[2]);
-            foreach (int element in linkedList)
+            foreach (int element in linkedList.Reverse())
             {
                 Console.Write(element + " ");
             }
