@@ -218,7 +218,7 @@ namespace CSharpLearn
                     Console.WriteLine("What is Hexadecimal?");
                     Console.WriteLine("Description: Utility class for converting between decimal and hexadecimal representations of numbers.");
                     Console.WriteLine("Usage: Provides methods to convert decimal numbers to hexadecimal format and vice versa.");
-                    Hexadecimal();
+                    HexadecimalMod.Hexadecimal(languageChoice);
                     break;
                 case 10:
                     Console.WriteLine("Linked List");
@@ -474,44 +474,6 @@ namespace CSharpLearn
 
                 Console.WriteLine($"The time is: {newHours.ToString("D2")}:{newMinutes.ToString("D2")}");
             }
-        }
-
-        public static void Hexadecimal()
-        {
-            // English: Implementation for the Hexadecimal problem
-            // Chinese: 十六进制问题的实现
-            string[] languageStrings = languageChoice == Language.English ?
-                new string[] { "Enter a decimal number: ", "The hexadecimal representation is: " } :
-                new string[] { "输入一个十进制数: ", "十六进制表示为: " };
-
-            Console.Write(languageStrings[0]);
-            int decimalNumber = int.Parse(Console.ReadLine());
-
-            int index = 0;
-
-            char[] hexadecimal = new char[32];
-            // Convert decimal to hexadecimal
-            while (decimalNumber != 0)
-            {
-                int remainder = decimalNumber % 16;
-
-                if (remainder < 10)
-                {
-                    hexadecimal[index] = (char)(remainder + '0');
-                }
-                else
-                {
-                    hexadecimal[index] = (char)(remainder - 10 + 'A');
-                }
-
-                decimalNumber /= 16;
-                index++;
-            }
-
-            // Add null terminator to the end of the hexadecimal array
-            hexadecimal[index] = '\0';
-
-            Console.WriteLine(languageStrings[1] + string.Join("", hexadecimal));
         }
 
         public static void LinkedList()
