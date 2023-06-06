@@ -7,6 +7,23 @@ using System.Threading.Tasks;
 
 namespace CSharpStarterKit
 {
+
+    /*
+     Pascal's rule gives rise to Pascal's triangle.
+
+       0:             1
+       1:          1     1
+       2:        1     2     1
+       3:      1     3     3     1
+       4:    1     4     6     4     1
+       5:  1     5    10    10    5     1
+       6: 1     6    15    20    15    6     1
+       7: 1     7    21    35    35    21    7     1
+       8: 1     8    28    56    70    56    28    8     1
+
+       e.g. (x + y)^5 = 1x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5xy^4 + 1y^5.
+     */
+
     internal class PascalsTriangleMod
     {
         public static void PascalsTriangle(Language languageChoice)
